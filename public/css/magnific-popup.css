@@ -83,30 +83,6 @@
 .mfp-hide {
 	display: none !important; }
 
-.mfp-preloader {
-	color: #CCC;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 24px;
-	height: 24px;
-	background: url('../images/preloader-dark.gif') center center no-repeat;
-	text-align: center;
-	margin-top: -12px;
-	margin-left: -12px;
-	z-index: 1044;
-	text-indent: -9999px;
-}
-	.mfp-preloader a {
-		color: #CCC; }
-		.mfp-preloader a:hover {
-			color: #FFF; }
-
-.mfp-s-ready .mfp-preloader {
-	display: none; }
-
-.mfp-s-error .mfp-content {
-	display: none; }
 
 button.mfp-close,
 button.mfp-arrow {

@@ -32,7 +32,7 @@ app.use(json());
 
 // Serve static files from the "dist" directory
 const __dirname = path.dirname(new URL(import.meta.url).pathname);
-app.use(express.static(path.join(__dirname, 'dist')));
+app.use(express.static(path.join(__dirname, '../dist')));
 
 // Serve the index.html file for all routes
 app.get('*', (req, res) => {

@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import { sendEmail } from '../src/nodemailer.js';
-const path = require('path');
+import path from 'path';
 
 import bodyParser from 'body-parser';
 const { urlencoded, json } = bodyParser;

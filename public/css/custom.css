@@ -65,8 +65,8 @@ label {
   position: sticky;
   top: 30px;
   height: 580px;
-  border: solid red 5px;
-  border-radius: 15px; 
+  
+  
 }
 
 .modal p {

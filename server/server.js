@@ -3,6 +3,7 @@ import cors from 'cors';
 import { sendEmail } from '../src/nodemailer.js';
 import path from 'path';
 
+
 import bodyParser from 'body-parser';
 const { urlencoded, json } = bodyParser;
 
@@ -30,6 +31,7 @@ app.use(urlencoded({ extended: false }));
 app.use(json());
 
 // Serve static files from the "dist" directory
+const __dirname = path.dirname(new URL(import.meta.url).pathname);
 app.use(express.static(path.join(__dirname, 'dist')));
 
 // Serve the index.html file for all routes

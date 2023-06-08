@@ -1,0 +1,85 @@
+.btn-outline-dark {
+  color: #495057;
+  background-color: white;
+}
+
+.btn-outline-dark:hover {
+  color: #fff;
+  background-color: #feb850;
+}
+.btn-outline-dark:not(:disabled):not(.disabled):active,
+.btn-outline-dark:not(:disabled):not(.disabled).active,
+.show > .btn-outline-dark.dropdown-toggle {
+  color: black;
+  background-color: #feb850;
+  
+}
+
+[id^='interest_'] {
+  display: none;
+  width: 100%;
+  height: 0px;
+  padding: 0px;
+  font-size: 15px;
+  line-height: 0;
+  color: #555555;
+  background-color: transparent;
+  background-image: none;
+  border-radius: 3px !important;
+  -webkit-transition: border-color ease-in-out 0.15s;
+  -o-transition: border-color ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s;
+}
+
+#sendBtn {
+  background-color: #feb850;
+}
+
+#actionbtn button {
+  float: right;
+}
+
+form label {
+  color: whitesmoke;
+}
+
+label {
+  text-transform: none;
+  font-weight: 400;
+  padding-left: 5px;
+}
+
+#contact {
+  position: relative;
+  height: 1450px;
+  background-color: #0B68B2; 
+  border-radius: 15px; 
+}
+
+#contact div div h2 {
+  text-transform: none; color: #ffc107;
+}
+
+#formContainer {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 30px;
+  height: 580px;
+  border: solid red 5px;
+  border-radius: 15px; 
+}
+
+.modal p {
+  font-size: 1em;
+}
+.modal-title {
+  color: whitesmoke;
+  
+}
+#confirmationModal .modal-header {
+  background-color: #0B68B2;
+}
+
+#errorModal .modal-header {
+  background-color: red;
+}

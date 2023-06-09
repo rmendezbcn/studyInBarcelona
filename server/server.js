@@ -31,12 +31,12 @@ app.use(urlencoded({ extended: false }));
 app.use(json());
 
 // Serve static files from the "dist" directory
-const __dirname = path.dirname(new URL(import.meta.url).pathname);
-app.use(express.static(path.join(__dirname, '../dist')));
+//const __dirname = path.dirname(new URL(import.meta.url).pathname);
+app.use(express.static( './dist'));
 
 // Serve the index.html file for all routes
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+  res.sendFile('./dist', 'index.html');
 });
 
 app.listen(port, () => {

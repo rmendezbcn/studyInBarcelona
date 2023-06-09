@@ -1,7 +1,6 @@
 import express from 'express';
 import cors from 'cors';
 import { sendEmail } from '../src/nodemailer.js';
-import path from 'path';
 
 
 import bodyParser from 'body-parser';
@@ -30,14 +29,11 @@ app.use(urlencoded({ extended: false }));
 // Parse application/json
 app.use(json());
 
-// Serve static files from the "dist" directory
-//const __dirname = path.dirname(new URL(import.meta.url).pathname);
-app.use(express.static( 'dist'));
-
-// Serve the index.html file for all routes
-app.get('*', (req, res) => {
-  res.sendFile('dist', 'index.html');
+// Serve the index.html file
+app.get('/', (req, res) => {
+  res.sendFile('index.html', { root: 'dist' });
 });
+
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

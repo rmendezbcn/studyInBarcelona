@@ -34,6 +34,13 @@ app.get('/', (req, res) => {
   res.sendFile('index.html', { root: 'dist' });
 });
 
+app.use(express.static('dist', { 
+  setHeaders: (res, path) => {
+    if (path.endsWith('.css')) {
+      res.setHeader('Content-Type', 'text/css');
+    }
+  }
+}));
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

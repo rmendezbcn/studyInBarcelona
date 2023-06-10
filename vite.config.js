@@ -10,5 +10,6 @@ export default defineConfig({
         main: './src/server/server.js', // Set the entry point to 'server.js'
       },
     },
+    chunkSizeWarningLimit: 1000, // Adjust the chunk size limit as needed
   },
 });

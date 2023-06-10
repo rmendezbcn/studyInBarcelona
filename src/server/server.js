@@ -31,9 +31,6 @@ app.use(json());
 // Serve the static assets (CSS, images, JS)
 app.use(express.static(path.resolve(__dirname, '../../public'), {
   setHeaders: (res, filePath) => {
-    if (filePath === path.resolve(__dirname, '../../public/node_modules/bootstrap/dist/css/bootstrap.min.css')) {
-      res.setHeader('Content-Type', 'text/css');
-    }
     if (filePath === path.resolve(__dirname, '../../public/src/client/index.js')) {
       res.setHeader('Content-Type', 'application/javascript');
     }

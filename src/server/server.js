@@ -4,10 +4,19 @@ import { sendEmail } from '../nodemailer.js';
 import path from 'path';
 import bodyParser from 'body-parser';
 
+const __dirname = path.dirname(new URL(import.meta.url).pathname);
 const app = express();
 const port = 3000;
 
-app.use(cors());
+// Enable CORS
+const corsOptions = {
+  origin: 'http://127.0.0.1:5173',
+  preflightContinue: true,
+  methods: 'post',
+  optionsSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 

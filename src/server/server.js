@@ -21,7 +21,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Serve the static assets (CSS, images, JS)
-app.use(express.static(path.resolve(__dirname, '../../public')));
+app.use(express.static(path.resolve(__dirname, '../../public'), {
+  setHeaders: (res, filePath) => {
+    if (filePath === path.resolve(__dirname, '../../public/src/client/index.js')) {
+      console.log('setting the header')
+      res.setHeader('Content-Type', mime.getType(filePath));
+    }
+  },
+}));
 
 // Serve the index.html file
 app.get('/', (req, res) => {

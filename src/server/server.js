@@ -2,56 +2,35 @@ import express from 'express';
 import cors from 'cors';
 import { sendEmail } from '../nodemailer.js';
 import path from 'path';
-const __dirname = path.dirname(new URL(import.meta.url).pathname);
-
 import bodyParser from 'body-parser';
-const { urlencoded, json } = bodyParser;
 
 const app = express();
-const port = 3000; // Change this to your desired port number
+const port = 3000;
 
-// Enable CORS
-let corsOptions = {
-  origin: 'http://127.0.0.1:5173',
-  preflightContinue: true,
-  methods: 'post',
-  optionsSuccessStatus: 200,
-}
-
-//app.options('/sendEmail', cors())
-app.use(
-  cors({ corsOptions })
-);
-
-// Parse application/x-www-form-urlencoded
-app.use(urlencoded({ extended: false }));
-// Parse application/json
-app.use(json());
+app.use(cors());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 // Serve the static assets (CSS, images, JS)
-app.use(express.static(path.resolve(__dirname, '../../public'), {
-  setHeaders: (res, filePath) => {
-    if (filePath === path.resolve(__dirname, '../../public/src/client/index.js')) {
-      res.setHeader('Content-Type', 'application/javascript');
-    }
-  },
-}));
+app.use(express.static(path.resolve(__dirname, '../../public')));
 
-app.use(express.static('public'));
-
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+// Serve the index.html file
+app.get('/', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '../../public/index.html'));
 });
 
 // Handle the sendEmail route
 app.post('/sendEmail', function (req, res) {
-  // Call your email sending function here
   sendEmail(req.body)
     .then(function () {
-      res.sendStatus(200); // Send a success response
+      res.sendStatus(200);
     })
     .catch(function (error) {
       console.error("EEEEEEE " + error);
-      res.sendStatus(500); // Send an error response
+      res.sendStatus(500);
     });
+});
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });

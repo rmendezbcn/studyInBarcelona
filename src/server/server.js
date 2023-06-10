@@ -23,6 +23,7 @@ app.use(bodyParser.json());
 // Serve the static assets (CSS, images, JS)
 app.use(express.static(path.resolve(__dirname, '../../public'), {
   setHeaders: (res, filePath) => {
+    console.log('file path: '+ filePath)
     if (filePath === path.resolve(__dirname, '../../public/src/client/index.js')) {
       console.log('setting the header')
       res.setHeader('Content-Type', mime.getType(filePath));

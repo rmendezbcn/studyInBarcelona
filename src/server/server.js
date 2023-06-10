@@ -34,6 +34,9 @@ app.use(express.static(path.resolve(__dirname, '../../public'), {
     if (filePath === path.resolve(__dirname, './public/node_modules/bootstrap/dist/css/bootstrap.min.css')) {
       res.setHeader('Content-Type', mime.getType(filePath));
     }
+    if (filePath === path.resolve(__dirname, './public/src/client/index.js')) {
+      res.setHeader('Content-Type', mime.getType(filePath));
+    }
   },
 }));
 

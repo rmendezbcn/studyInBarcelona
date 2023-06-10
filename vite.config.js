@@ -4,6 +4,8 @@ import { defineConfig } from 'vite';
 export default defineConfig({
   // Other configuration options...
   build: {
-    outDir: 'public',
+    rollupOptions: {
+      input: '/src/client/index.js',
+    },
   },
 });

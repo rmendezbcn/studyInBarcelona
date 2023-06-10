@@ -3,6 +3,7 @@ import cors from 'cors';
 import { sendEmail } from '../nodemailer.js';
 import path from 'path';
 import bodyParser from 'body-parser';
+import mime from 'mime';
 
 const __dirname = path.dirname(new URL(import.meta.url).pathname);
 const app = express();
@@ -20,13 +21,22 @@ app.use(cors(corsOptions));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+// Define the MIME types for different file extensions
+const mimeTypes = {
+  '.js': 'application/javascript',
+  '.css': 'text/css',
+  '.jpg': 'image/jpeg',
+  '.png': 'image/png',
+  // Add more file extensions and corresponding MIME types as needed
+};
+
 // Serve the static assets (CSS, images, JS)
 app.use(express.static(path.resolve(__dirname, '../../public'), {
   setHeaders: (res, filePath) => {
-    console.log('file path: '+ filePath)
-    if (filePath === path.resolve(__dirname, '../../public/src/client/index.js')) {
-      console.log('setting the header')
-      res.setHeader('Content-Type', mime.getType(filePath));
+    const fileExtension = path.extname(filePath);
+    const mimeType = mimeTypes[fileExtension];
+    if (mimeType) {
+      res.setHeader('Content-Type', mimeType);
     }
   },
 }));

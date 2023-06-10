@@ -30,19 +30,21 @@ const mimeTypes = {
   // Add more file extensions and corresponding MIME types as needed
 };
 
-// Serve the static assets (CSS, images, JS)
-app.use(express.static(path.resolve(__dirname, './dist'), {
-  setHeaders: (res, filePath) => {
-    const fileExtension = path.extname(filePath);
-    const mimeType = mimeTypes[fileExtension];
-    if (mimeType) {
-      res.setHeader('Content-Type', mimeType);
-    }
-  },
-}));
-
 // Serve the bundled JavaScript file
-app.use(express.static(path.resolve(__dirname, 'dist/main.js')));
+app.use(express.static(path.resolve(__dirname, 'dist')));
+
+// Serve the static assets (CSS, images, JS)
+app.use(express.static(path.resolve(__dirname, './dist')));
+
+app.use((req, res, next) => {
+  const filePath = path.join(__dirname, './dist', req.path);
+  const mimeType = mimeTypes[path.extname(filePath)];
+  if (mimeType) {
+    res.setHeader('Content-Type', mimeType);
+  }
+  next();
+});
+
 
 // Handle the sendEmail route
 app.post('/sendEmail', function (req, res) {

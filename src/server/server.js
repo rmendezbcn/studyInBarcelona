@@ -28,8 +28,8 @@ app.use(urlencoded({ extended: false }));
 // Parse application/json
 app.use(json());
 
-// Serve the index.html file
-app.use(express.static(path.resolve(__dirname, './public')));
+// Serve the static assets (CSS, images, JS)
+app.use(express.static(path.resolve(__dirname, '../../public')));
 
 
 app.use(express.static('public'));

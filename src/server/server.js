@@ -29,12 +29,14 @@ app.use(urlencoded({ extended: false }));
 app.use(json());
 
 // Serve the static assets (CSS, images, JS)
-app.use(express.static(path.resolve(__dirname, '../../public')));
+app.use(express.static(path.resolve(__dirname, '../../public'), {
+  setHeaders: (res, filePath) => {
+    if (filePath === path.resolve(__dirname, './public/node_modules/bootstrap/dist/css/bootstrap.min.css')) {
+      res.setHeader('Content-Type', mime.getType(filePath));
+    }
+  },
+}));
 
-// Serve Bootstrap CSS file
-app.get('/node_modules/bootstrap/dist/css/bootstrap.min.css', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '../../node_modules/bootstrap/dist/css/bootstrap.min.css'));
-});
 
 app.use(express.static('public'));
 

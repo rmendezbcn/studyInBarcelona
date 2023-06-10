@@ -31,6 +31,10 @@ app.use(json());
 // Serve the static assets (CSS, images, JS)
 app.use(express.static(path.resolve(__dirname, '../../public')));
 
+// Serve Bootstrap CSS file
+app.get('/node_modules/bootstrap/dist/css/bootstrap.min.css', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '../../node_modules/bootstrap/dist/css/bootstrap.min.css'));
+});
 
 app.use(express.static('public'));
 

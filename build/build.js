@@ -11,7 +11,7 @@ async function build() {
     let html = await fs.readFile(indexPath, 'utf-8');
 
     // Get the list of files in the dist/assets directory
-    const files = await fs.readdirSync('./dist/assets');
+    const files = await fs.readdirSync('./assets');
 
     // Find the main JavaScript file
     const mainJsFile = files.find((file) => file.startsWith('main-'));

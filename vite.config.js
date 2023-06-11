@@ -11,5 +11,18 @@ export default defineConfig({
       },
     },
     chunkSizeWarningLimit: 1000, // Adjust the chunk size limit as needed
+    output: {
+      entryFileNames: `main-[hash].js`,
+      chunkFileNames: `main-[hash].js`,
+      assetFileNames: `main-[hash].js`
+    }
   },
+  plugins: [
+    {
+      name: 'html-transform',
+      transformIndexHtml(html) {
+        return html.replace('{{mainJs}}', `/dist/main-${require('crypto').randomBytes(8).toString('hex')}.js`);
+      }
+    }
+  ]
 });

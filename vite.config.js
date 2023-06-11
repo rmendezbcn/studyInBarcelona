@@ -1,5 +1,6 @@
 // vite.config.js
 import { defineConfig } from 'vite';
+import { createHtmlPlugin } from 'vite-plugin-html';
 
 export default defineConfig({
   // Other configuration options...
@@ -11,18 +12,15 @@ export default defineConfig({
       },
     },
     chunkSizeWarningLimit: 1000, // Adjust the chunk size limit as needed
-    output: {
-      entryFileNames: `main-[hash].js`,
-      chunkFileNames: `main-[hash].js`,
-      assetFileNames: `main-[hash].js`
-    }
+    assetsInlineLimit: 0, // Disable asset inline limit
   },
   plugins: [
-    {
-      name: 'html-transform',
-      transformIndexHtml(html) {
-        return html.replace('{{mainJs}}', `/dist/main-${require('crypto').randomBytes(8).toString('hex')}.js`);
-      }
-    }
-  ]
+    createHtmlPlugin({
+      inject: {
+        data: {
+          mainJs: `/dist/assets/main-[hash].js`, // Specify the file path with [hash] placeholder
+        },
+      },
+    }),
+  ],
 });

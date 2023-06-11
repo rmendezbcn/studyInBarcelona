@@ -1,13 +1,13 @@
-import { readFileSync, readdirSync, writeFileSync } from 'fs-extra';
+import fs from 'fs-extra';
 import crypto from 'crypto';
 
 async function build() {
   try {
     // Read the index.html file
-    let html = await readFileSync('./index.html', 'utf-8');
+    let html = await fs.readFileSync('./index.html', 'utf-8');
 
     // Get the list of files in the dist/assets directory
-    const files = await readdirSync('./dist/assets');
+    const files = await fs.readdirSync('./dist/assets');
 
     // Find the main JavaScript file
     const mainJsFile = files.find((file) => file.startsWith('main-'));
@@ -17,7 +17,7 @@ async function build() {
     html = html.replace('{{mainJs}}', mainJsPath);
 
     // Write the modified index.html file
-    await writeFileSync('./dist/index.html', html);
+    await fs.writeFileSync('./dist/index.html', html);
 
     console.log('Build completed successfully.');
   } catch (error) {

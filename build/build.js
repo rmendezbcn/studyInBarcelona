@@ -1,6 +1,5 @@
 import fs from 'fs-extra';
 import path from 'path';
-import crypto from 'crypto';
 
 async function build() {
   try {
@@ -11,7 +10,8 @@ async function build() {
     let html = await fs.readFile(indexPath, 'utf-8');
 
     // Get the list of files in the dist/assets directory
-    const files = await fs.readdirSync('./assets');
+    const distPath = path.join(process.cwd(), 'dist/assets');
+    const files = await fs.readdir(distPath);
 
     // Find the main JavaScript file
     const mainJsFile = files.find((file) => file.startsWith('main-'));
@@ -21,7 +21,7 @@ async function build() {
     html = html.replace('{{mainJs}}', mainJsPath);
 
     // Resolve the absolute path to the modified index.html file
-    const outputIndexPath = path.resolve('./index.html');
+    const outputIndexPath = path.resolve('./dist/index.html');
 
     // Write the modified index.html file
     await fs.writeFile(outputIndexPath, html);

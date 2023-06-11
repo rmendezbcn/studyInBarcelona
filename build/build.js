@@ -15,13 +15,13 @@ async function build() {
 
     // Find the main JavaScript file
     const mainJsFile = files.find((file) => file.startsWith('main-'));
-    const mainJsPath = mainJsFile ? `/dist/assets/${mainJsFile}` : '/dist/assets/main.js';
+    const mainJsPath = mainJsFile ? `/assets/${mainJsFile}` : '/assets/main.js';
 
     // Replace the placeholder with the correct file path
     html = html.replace('{{mainJs}}', mainJsPath);
 
     // Resolve the absolute path to the modified index.html file
-    const outputIndexPath = path.resolve('./dist/index.html');
+    const outputIndexPath = path.resolve('./index.html');
 
     // Write the modified index.html file
     await fs.writeFile(outputIndexPath, html);

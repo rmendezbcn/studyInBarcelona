@@ -1,5 +1,5 @@
-import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
-
+//import 'bootstrap/dist/css/bootstrap.min.css';
+import '/css/bootstrap.css';
 const sendBtn = document.getElementById("sendBtn");
 const form = document.getElementById('contact-form');
 //const confirmationBtn = document.getElementById('confirmationBtn');

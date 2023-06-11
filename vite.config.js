@@ -1,18 +1,24 @@
 import { defineConfig } from 'vite';
+import autoprefixer from 'autoprefixer';
+import postcssImport from 'postcss-import';
+import path from 'path';
 
 export default defineConfig({
   // Other configuration options...
   build: {
-    outDir: 'dist', // Set the output directory to 'dist'
+  // Other configuration options...
     rollupOptions: {
       input: {
-        main: './src/server/server.js', // Set the entry point to 'server.js'
+        main: './src/server/server.js',
+      },
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules/bootstrap')) {
+            return 'bootstrap';
+          }
+        },
       },
     },
-    chunkSizeWarningLimit: 3000, // Adjust the chunk size limit as needed
-    assetsInlineLimit: 0, // Disable inline limit for assets
-    emptyOutDir: true, // Clear the output directory before each build
-    manifest: true, // Generate manifest file for caching
-    minify: true, // Enable minification
   },
 });
+

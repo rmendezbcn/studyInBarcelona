@@ -2,8 +2,8 @@ import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 const sendBtn = document.getElementById("sendBtn");
 const form = document.getElementById('contact-form');
-const confirmationBtn = document.getElementById('confirmationBtn');
-const confirmationModal = document.getElementById('confirmationModal');
+//const confirmationBtn = document.getElementById('confirmationBtn');
+//const confirmationModal = document.getElementById('confirmationModal');
 let mainInterest = ''
 const interestInputs = $('input[id^="interest_"]')
   interestInputs.on('change', function () {
@@ -47,12 +47,8 @@ sendBtn.addEventListener("click", function (event) {
   })
     .then(function (response) {
       if (response.ok) {
-        //confirmationModal.classList.remove('d-none');
         //alert('Email sent successfully!');
-        console.log('before catching the modal')
-        //document.getElementById('confirmationModal').setAttribute('aria-hidden', 'false');
         showConfirmationModal();
-        console.log('after catching the modal')
         form.reset(); // Clear the form
       } else {
         throw new Error('Error occurred while sending email.');

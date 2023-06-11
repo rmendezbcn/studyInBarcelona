@@ -13,7 +13,6 @@ const corsOptions = {
   origin: (origin, callback) => {
     const allowedOrigins = ['https://studyinbarcelona.onrender.com', 'http://127.0.0.1'];
     const requestOrigin = req.headers.origin;
-    console.log(typeof(requestOrigin))
 
     // Check if the request origin is allowed
     if (requestOrigin === null || allowedOrigins.includes(requestOrigin)) {
@@ -43,16 +42,12 @@ const mimeTypes = {
   // Add more file extensions and corresponding MIME types as needed
 };
 
-// Serve the bundled JavaScript file
-app.use(express.static(path.resolve(__dirname, '../dist')));
-
 // Serve the index.html file
 app.get('/', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../dist/index.html'));
 });
 
 app.use('/css', express.static(path.resolve(__dirname, '../public/css')));
-
 
 // Serve static assets with appropriate headers
 app.use(express.static(path.resolve(__dirname, '../dist'), {
@@ -64,6 +59,9 @@ app.use(express.static(path.resolve(__dirname, '../dist'), {
     }
   },
 }));
+
+// Serve the bundled JavaScript file
+app.use(express.static(path.resolve(__dirname, '../dist/assets')));
 
 // Handle the sendEmail route
 app.post('/sendEmail', function (req, res) {

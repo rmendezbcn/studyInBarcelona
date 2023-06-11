@@ -1,13 +1,13 @@
-import { readFileSync, readdirSync, writeFileSync } from 'fs';
-import { build as _build } from 'esbuild';
+import { readFileSync, readdirSync, writeFileSync } from 'fs-extra';
+import crypto from 'crypto';
 
 async function build() {
   try {
     // Read the index.html file
-    let html = readFileSync('./index.html', 'utf-8');
+    let html = await readFileSync('./index.html', 'utf-8');
 
     // Get the list of files in the dist/assets directory
-    const files = readdirSync('./dist/assets');
+    const files = await readdirSync('./dist/assets');
 
     // Find the main JavaScript file
     const mainJsFile = files.find((file) => file.startsWith('main-'));
@@ -17,7 +17,7 @@ async function build() {
     html = html.replace('{{mainJs}}', mainJsPath);
 
     // Write the modified index.html file
-    writeFileSync('./dist/index.html', html);
+    await writeFileSync('./dist/index.html', html);
 
     console.log('Build completed successfully.');
   } catch (error) {
@@ -25,15 +25,4 @@ async function build() {
   }
 }
 
-// Transpile and execute the build function using esbuild
-_build({
-  entryPoints: ['./build.js'],
-  bundle: true,
-  outfile: './build/build.bundle.js',
-  platform: 'node',
-  target: 'node12',
-  format: 'cjs',
-}).then(() => {
-  // Execute the transpiled build function
-  require('./build.bundle.js').build();
-});
+build();

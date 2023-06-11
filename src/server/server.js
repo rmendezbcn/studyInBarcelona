@@ -11,7 +11,7 @@ const port = 3000;
 // Enable CORS
 const corsOptions = {
   origin: (origin, callback) => {
-    const allowedOrigins = ['https://studyinbarcelona.onrender.com', 'http://127.0.0.1:5173/'];
+    const allowedOrigins = ['https://studyinbarcelona.onrender.com', 'http://127.0.0.1'];
     const requestOrigin = req.headers.origin;
     console.log(typeof(requestOrigin))
 

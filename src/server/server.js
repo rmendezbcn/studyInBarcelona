@@ -12,8 +12,11 @@ const port = 3000;
 const corsOptions = {
   origin: (origin, callback) => {
     const allowedOrigins = ['https://studyinbarcelona.onrender.com', 'http://127.0.0.1:5173/'];
+    const requestOrigin = req.headers.origin;
+    console.log(typeof(requestOrigin))
+
     // Check if the request origin is allowed
-    if (allowedOrigins.includes(origin)) {
+    if (requestOrigin === null || allowedOrigins.includes(requestOrigin)) {
       callback(null, true);
     } else {
       callback(new Error('Not allowed by CORS'));

@@ -31,15 +31,15 @@ const mimeTypes = {
 };
 
 // Serve the bundled JavaScript file
-app.use(express.static(path.resolve(__dirname, './dist')));
+app.use(express.static(path.resolve(__dirname, '../dist')));
 
 // Serve the index.html file
 app.get('/', (req, res) => {
-  res.sendFile(path.resolve(__dirname, './dist/index.html'));
+  res.sendFile(path.resolve(__dirname, '../dist/index.html'));
 });
 
 // Serve static assets with appropriate headers
-app.use(express.static(path.resolve(__dirname, './dist'), {
+app.use(express.static(path.resolve(__dirname, '../dist'), {
   setHeaders: (res, filePath) => {
     const fileExtension = path.extname(filePath);
     const mimeType = mimeTypes[fileExtension];

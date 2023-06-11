@@ -9,25 +9,23 @@ const app = express();
 const port = 3000;
 
 // Enable CORS
-const corsOptions = (req, callback) => {
-    // Replace this logic with your own to determine the allowed origin
-    const allowedOrigins = ['https://studyinbarcelona.onrender.com', 'localHost'];
-    const origin = req.get('Origin');
-    console.log(origin)
-
-  if (allowedOrigins.includes(origin)) {
-    callback(null, true);
-  } else {
-    callback(new Error('Not allowed by CORS'));
-  }
-};
-const corsMiddleware = cors({
-  preflightContinue: true,
+const corsOptions = {
+  origin: (origin, callback) => {
+    const allowedOrigins = ['https://studyinbarcelona.onrender.com', 'http://127.0.0.1:5173/'];
+    // Check if the request origin is allowed
+    if (allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   methods: ['GET', 'POST'],
   optionsSuccessStatus: 200,
   allowedHeaders: 'Content-Type',
   exposedHeaders: 'Content-Type',
-});
+};
+
+app.use(cors(corsOptions));
 
 app.use(corsMiddleware(corsOptions));
 

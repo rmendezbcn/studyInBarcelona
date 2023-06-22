@@ -1,10 +1,10 @@
 //import 'bootstrap/dist/css/bootstrap.min.css';
 
-import '/css/bootstrap.css';
+import '../../public/css/bootstrap.css';
 const sendBtn = document.getElementById("sendBtn");
 const form = document.getElementById('contact-form');
-//const confirmationBtn = document.getElementById('confirmationBtn');
-//const confirmationModal = document.getElementById('confirmationModal');
+
+
 let mainInterest = ''
 const interestInputs = $('input[id^="interest_"]')
   interestInputs.on('change', function () {

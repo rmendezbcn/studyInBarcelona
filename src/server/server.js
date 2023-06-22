@@ -12,7 +12,7 @@ const port = 3000;
 const corsOptions = {
   origin: (origin, callback) => {
     const allowedOrigins = ['https://studyinbarcelona.onrender.com', 'http://127.0.0.1'];
-    const requestOrigin = req.headers.origin;
+    const requestOrigin = req?.headers?.origin;
 
     // Check if the request origin is allowed
     if (requestOrigin === null || allowedOrigins.includes(requestOrigin)) {
@@ -23,8 +23,8 @@ const corsOptions = {
   },
   methods: ['GET', 'POST'],
   optionsSuccessStatus: 200,
-  allowedHeaders: 'Content-Type',
-  exposedHeaders: 'Content-Type',
+  allowedHeaders: ['Content-Type'],
+  exposedHeaders: ['Content-Type'],
 };
 
 app.use(cors(corsOptions));

@@ -6,7 +6,7 @@ import bodyParser from 'body-parser';
 
 const __dirname = path.dirname(new URL(import.meta.url).pathname);
 const app = express();
-const port = 3000;
+const port = 3001;
 
 // Enable CORS
 const corsOptions = {

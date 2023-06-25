@@ -15,7 +15,7 @@ async function build() {
 
     // Find the main JavaScript file
     const mainJsFile = files.find((file) => file.startsWith('main-'));
-    const mainJsPath = mainJsFile ? `./assets/${mainJsFile}` : './assets/main.js';
+    const mainJsPath = mainJsFile ? `/assets/${mainJsFile}` : '/assets/main.js';
 
     // Replace the placeholder with the correct file path
     html = html.replace('{{mainJs}}', mainJsPath);

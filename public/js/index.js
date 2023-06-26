@@ -1,16 +1,16 @@
 //import 'bootstrap/dist/css/bootstrap.min.css';
 
-import '../../public/css/bootstrap.css';
+//import '../css/bootstrap.css';
 const sendBtn = document.getElementById("sendBtn");
 const form = document.getElementById('contact-form');
 
 
 let mainInterest = ''
 const interestInputs = $('input[id^="interest_"]')
-  interestInputs.on('change', function () {
-      mainInterest = $(this).prop('value')
-      console.log(mainInterest)
-    })
+interestInputs.on('change', function () {
+  mainInterest = $(this).prop('value')
+  console.log(mainInterest)
+})
 
 sendBtn.addEventListener("click", function (event) {
   event.preventDefault(); // Prevent form submission

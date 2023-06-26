@@ -63,7 +63,7 @@ app.use(express.static(path.resolve(__dirname, '../public'), {
 }));
 
 // Serve the bundled JavaScript file
-app.use('/assets', express.static(path.resolve(__dirname, '../dist/assets')));
+app.use('/js', express.static(path.resolve(__dirname, '../public/js')));
 
 // Handle the sendEmail route
 app.post('/sendEmail', function (req, res) {

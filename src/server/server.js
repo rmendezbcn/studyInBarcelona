@@ -12,7 +12,7 @@ const port = 3001;
 const corsOptions = {
   origin: (origin, callback) => {
     const allowedOrigins = ['http://178.128.197.175', 'http://127.0.0.1'];
-    const requestOrigin = req?.headers?.origin;
+    const requestOrigin = origin;
 
     // Check if the request origin is allowed
     if (requestOrigin === null || allowedOrigins.includes(requestOrigin)) {
@@ -27,7 +27,7 @@ const corsOptions = {
   exposedHeaders: ['Content-Type'],
 };
 
-app.use(cors(corsOptions));
+app.use(cors());
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());

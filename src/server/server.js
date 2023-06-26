@@ -11,7 +11,7 @@ const port = 3001;
 // Enable CORS
 const corsOptions = {
   origin: (origin, callback) => {
-    const allowedOrigins = ['https://studyinbarcelona.onrender.com', 'http://127.0.0.1'];
+    const allowedOrigins = ['http://178.128.197.175', 'http://127.0.0.1'];
     const requestOrigin = req?.headers?.origin;
 
     // Check if the request origin is allowed
@@ -44,13 +44,15 @@ const mimeTypes = {
 
 // Serve the index.html file
 app.get('/', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '../dist/index.html'));
+  //res.sendFile(path.resolve(__dirname, '../dist/index.html'));
+  res.sendFile(path.resolve(__dirname, '../public/index.html'));
 });
 
 app.use('/css', express.static(path.resolve(__dirname, '../public/css')));
 
 // Serve static assets with appropriate headers
-app.use(express.static(path.resolve(__dirname, '../dist'), {
+//app.use(express.static(path.resolve(__dirname, '../dist'), {
+app.use(express.static(path.resolve(__dirname, '../public'), {
   setHeaders: (res, filePath) => {
     const fileExtension = path.extname(filePath);
     const mimeType = mimeTypes[fileExtension];

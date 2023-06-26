@@ -39,7 +39,7 @@ sendBtn.addEventListener("click", function (event) {
 
   console.log("this is the index.js ", studentData)
 
-  fetch('http://127.0.0.1:3000/sendEmail', {
+  fetch('http://178.128.197.175:3001/sendEmail', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

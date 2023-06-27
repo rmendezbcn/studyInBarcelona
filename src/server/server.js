@@ -27,7 +27,7 @@ const corsOptions = {
   exposedHeaders: ['Content-Type'],
 };
 
-app.use(cors());
+app.use(cors(corsOptions));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -66,16 +66,15 @@ app.use(express.static(path.resolve(__dirname, '../public'), {
 app.use('/js', express.static(path.resolve(__dirname, '../public/js')));
 
 // Handle the sendEmail route
-app.post('/sendEmail', function (req, res) {
-  sendEmail(req.body)
-  console.log("this is the server.js ", req.body)
-    .then(function () {
-      res.sendStatus(200);
-    })
-    .catch(function (error) {
-      console.error("EEEEEEE " + error);
-      res.sendStatus(500);
-    });
+app.post('/sendEmail', async function (req, res) {
+  try {
+    await sendEmail(req.body);
+    console.log("this is the server.js ", req.body);
+    res.sendStatus(200);
+  } catch (error) {
+    console.error("EEEEEEE " + error);
+    res.sendStatus(500);
+  }
 });
 
 app.listen(port, () => {

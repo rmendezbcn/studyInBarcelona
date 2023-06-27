@@ -68,6 +68,7 @@ app.use('/js', express.static(path.resolve(__dirname, '../public/js')));
 // Handle the sendEmail route
 app.post('/sendEmail', function (req, res) {
   sendEmail(req.body)
+  console.log("this is the server.js ", req.body)
     .then(function () {
       res.sendStatus(200);
     })

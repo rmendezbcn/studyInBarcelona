@@ -1,6 +1,3 @@
-//import 'bootstrap/dist/css/bootstrap.min.css';
-
-//import '../css/bootstrap.css';
 const sendBtn = document.getElementById("sendBtn");
 const form = document.getElementById('contact-form');
 
@@ -9,7 +6,7 @@ let mainInterest = ''
 const interestInputs = $('input[id^="interest_"]')
 interestInputs.on('change', function () {
   mainInterest = $(this).prop('value')
-  console.log(mainInterest)
+  //console.log(mainInterest)
 })
 
 sendBtn.addEventListener("click", function (event) {
@@ -36,6 +33,7 @@ sendBtn.addEventListener("click", function (event) {
     mainInterest,
     comments
   }
+  
 
   console.log("this is the index.js ", studentData)
 

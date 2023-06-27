@@ -13,6 +13,7 @@ const transporter = nodemailer.createTransport({
 
 // Define the email sending function
 export async function sendEmail(data) {
+  console.log("this is the nodemailer.js ", data)
   try {
     // Construct the email message
     const message = {
@@ -22,7 +23,7 @@ export async function sendEmail(data) {
       text: `
         Hola Marc,
         Mi nombre es Name: ${data.name}, tengo ${data.age} años y mi nacionalidad es ${data.citizenship}. 
-        Estoy interesad@ en venir a Barcelona a estudiar.
+        Estoy interesad@ en venir a Barcelona a estudiar ${data.mainInterest}.
         
         Mi email es ${data.email} y necesito tus servicios!
         Comentarios ${data.comments}.

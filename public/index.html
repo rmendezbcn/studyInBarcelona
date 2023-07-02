@@ -45,7 +45,7 @@
 						<ul class="one-page-menu">
 							<li class="current"><a style="padding: 20px 15px;" href="#" data-href="#header"><div>Home</div></a></li>
 							<li><a style="padding: 20px 15px;" href="#service"><div>Nuestros Servicios</div></a></li>
-							<li><a style="padding: 20px 15px;" href="#"><div>Acerca de nosotros</div></a></li>
+							<li><a style="padding: 20px 15px;" href="./about.html"><div>Acerca de nosotros</div></a></li>
 							<!-- <li><a style="padding: 20px 15px;" href="#"><div>Testimonials</div></a></li> -->
 						</ul> 
 					</nav><!-- #primary-menu end -->
@@ -348,6 +348,45 @@
 							</div>
 						</div>
 					</div> <!-- end of modal -->
+
+					<!-- wellcome modal -->
+					<div id="wellcomeModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="wellcome" aria-hidden="true">
+						<div class="modal-dialog modal-lg">
+							<div class="modal-body" style="background-color: #2C8FD5;">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h1 class="mb-0" id="myModalLabel" style="font-weight: 600;">Hola!</h1>
+									</div>
+									<div class="modal-body">
+										<p class="center fs-3">
+											<strong>"Somos la única agencia trabajando exclusivamente en destino Barcelona"</strong>
+										</p>
+
+										<div> <!-- cookies -->
+											<p class="nobottommargin center">
+												Esta página web utiliza <strong>cookies</strong> para analizar de forma anónima y estadística 
+												el uso que haces de la web.
+												Al clicar "De acuerdo" aceptas estas cookies.
+											</p>
+
+											<div class="center p-3">
+												<button 
+													id="confirmationBtn"
+													class="button button-large button-circle" 
+													onclick="closeWellcome()"
+													style="background-color: #8f165e; font-size: .8rem; text-transform: none;">
+													<i class="icon-checkbox-checked"></i> 
+													De acuerdo!
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div> <!-- end of modal -->
+
+
 				</div>
 				<div>
 				</div>
@@ -460,7 +499,6 @@
 	<script src="./js/functions.js"></script>
 	<script src="./js/index.js"></script>
  	<!--<script type="module" src="{{mainJs}}"></script>-->
-
 
 </body>
 </html>

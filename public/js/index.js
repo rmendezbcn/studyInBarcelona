@@ -67,3 +67,10 @@ function showConfirmationModal() {
 function showErrorModal() {
   $('#errorModal').modal('show');
 }
+
+$(window).on('load', function() {
+  $('#wellcomeModal').modal('show');
+});
+function closeWellcome() {
+  $('#wellcomeModal').modal('hide')
+}

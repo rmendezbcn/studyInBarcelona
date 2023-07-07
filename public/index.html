@@ -193,93 +193,83 @@
 								
 							<div id="contact" class="col-md-6 pt-4"> <!-- contact form-->
 								<div id="formContainer" class="">
-									<div class="heading-block noborder center pt-3 mb-3 ">
+									<div class="heading-block noborder center pt-3 mb-4 ">
 										<h2 class="">Contacta con nosotros ya <br>
 											y pon en marcha tus sueños</h2>
 									</div>
 									
-									<form class="col-12 mb-0" id="contact-form" onsubmit="return false" method="post">
+									<form class="col-12 mb-0 px-1" id="contact-form" onsubmit="return false" method="post">
 										<!-- name -->
-										<div class="col-12 form-group">
-											<div class="row">
-												<div class="col-sm-3 col-form-label">
-													<label class="fs-6 pr-2" for="contact-form-name">Nombre:</label>
-												</div>
-												<div class="col-sm-8">
-													<input type="text" name="contact-form-name" id="contact-form-name" class="form-control required" value="" placeholder="Tu nombre completo es...">
-												</div>
+										<div class="col-12 form-row">									
+											<div class="col-sm-4 center col-form-label">
+												<label class="fs-6 pr-2" for="contact-form-name">Nombre:</label>
+											</div>
+											<div class="col-sm-8">
+												<input type="text" name="contact-form-name" id="contact-form-name" class="form-control required" value="" placeholder="Tu nombre completo es...">
 											</div>
 										</div>
-	
+
 										<!-- email -->
-										<div class="col-12 form-group">
-											<div class="row">
-												<div class="col-sm-3 col-form-label">
-													<label class="fs-6 pr-2" for="contact-form-email">Email:</label>
-												</div>
-												<div class="col-sm-8">
-													<input type="email" name="contact-form-email" id="contact-form-email" class="form-control required" value="" placeholder="Tu email es...">
-												</div>
+										<div class="col-12 form-row">
+											<div class="col-sm-4 center col-form-label">
+												<label class="fs-6 pr-2" for="contact-form-email">Email:</label>
+											</div>
+											<div class="col-sm-8">
+												<input type="email" name="contact-form-email" id="contact-form-email" class="form-control required" value="" placeholder="Tu email es...">
 											</div>
 										</div>
 	
 										<!-- age -->
-										<div class="col-12 form-group">
-											<div class="row">
-												<div class="col-sm-3 col-form-label">
-													<label class="fs-6 pr-2" for="contact-form-age">Edad:</label>
-												</div>
-												<div class="col-sm-8">
-													<input type="number" min="10" name="contact-form-age" id="contact-form-age" class="form-control required" value="" placeholder="Tu edad es...">
-												</div>
+										<div class="col-12 form-row">
+											<div class="col-sm-4 center col-form-label">
+												<label class="fs-6 pr-2" for="contact-form-age">Edad:</label>
+											</div>
+											<div class="col-sm-8">
+												<input type="number" min="10" name="contact-form-age" id="contact-form-age" class="form-control required" value="" placeholder="Tu edad es...">
 											</div>
 										</div>
 	
 										<!-- citizenship -->
-										<div class="col-12 form-group">
-											<div class="row">
-												<div class="col-sm-3 col-form-label">
-													<label class="fs-6 pr-2" for="contact-form-citizenship">País:</label>
-												</div>
-												<div class="col-sm-8">
-													<input type="text" name="contact-form-citizenship" id="contact-form-citizenship" class="form-control required" value="" placeholder="Tu nacionalidad es...">
+										<div class="col-12 form-row">
+											<div class="col-sm-4 center col-form-label">
+												<label class="fs-6 pr-2" for="contact-form-citizenship">Nacionalidad:</label>
+											</div>
+											<div class="col-sm-8 pr-5">
+												<input type="text" name="contact-form-citizenship" id="contact-form-citizenship" class="form-control required" value="" placeholder="Tu nacionalidad es...">
+											</div>
+										</div>
+											
+										<!-- interest -->
+										<div class="col-12 form-row">
+											<div class="col-sm-4 center col-form-label">
+												<label class="fs-6 pr-2" for="contact-form-interest">Interés:</label>
+											</div>
+											<div class="col-sm-8">
+												<div class="btn-group btn-group-toggle d-flex" data-toggle="buttons">
+													<label class="btn btn-outline-dark font-body ls0 nott px-2">
+														<input type="radio" class="form-control required" id="interest_languages" value="languges">Idiomas
+													</label>
+													<label class="btn btn-outline-dark font-body ls0 nott">
+														<input type="radio" class="form-control required" id="interest_3grade" value="3grade">Master / PhD
+													</label>
+													<label class="btn btn-outline-dark font-body ls0 nott px-2">
+														<input type="radio" class="form-control required" id="interest_university" value="university">Universidad
+													</label>
 												</div>
 											</div>
 										</div>
 										
-										<!-- interest -->
-										<div class="col-12 form-group">
-											<div class="row">
-												<div class="col-sm-3 col-form-label">
-													<label class="fs-6 pr-2" for="contact-form-interest">Interés:</label>
-												</div>
-												<div class="col-sm-8">
-													<div class="btn-group btn-group-toggle d-flex" data-toggle="buttons">
-														<label class="btn btn-outline-dark font-body ls0 nott px-2">
-															<input type="radio" class="form-control required" id="interest_languages" value="languges">Idiomas
-														</label>
-														<label class="btn btn-outline-dark font-body ls0 nott">
-															<input type="radio" class="form-control required" id="interest_3grade" value="3grade">Master / PhD
-														</label>
-														<label class="btn btn-outline-dark font-body ls0 nott px-2">
-															<input type="radio" class="form-control required" id="interest_university" value="university">Universidad
-														</label>
-													</div>
-												</div>
-											</div>
-										</div>
 
 										<!-- Comments -->
-										<div class="col-12 form-group">
-											<div class="row">
-												<div class="col-sm-3 col-form-label">
-													<label class="fs-6 pr-2" for="contact-form-comments">Comentarios:</label>
-												</div>
-												<div class="col-sm-8">
-													<input type="text-area" name="contact-form-comments" id="contact-form-comments" class="form-control required" value="" placeholder="">
-												</div>
+										<div class="col-12 form-row">
+											<div class="col-sm-4 center col-form-label">
+												<label class="fs-6 pr-2" for="contact-form-comments">Comentarios:</label>
+											</div>
+											<div class="col-sm-8">
+												<input type="text-area" name="contact-form-comments" id="contact-form-comments" class="form-control required" value="" placeholder="">
 											</div>
 										</div>
+										
 										
 										
 										<div id="actionbtn" class="row pt-2">

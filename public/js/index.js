@@ -37,7 +37,7 @@ sendBtn.addEventListener("click", function (event) {
 
   console.log("this is the index.js ", studentData)
 
-  fetch('http://178.128.197.175:3001/sendEmail', {
+  fetch('https://studyinbarcelona.net/sendEmail', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -119,12 +119,22 @@ const formSendBtn = document.getElementById('feedbackSendBtn');
 formSaveBtn.addEventListener('click', saveFormData);
 formSendBtn.addEventListener('click', sendData);
 
+function saveFormData() {
+  const formData = {};
+
+  formInputs.forEach(input => {
+    formData[input.id] = input.value;
+  });
+
+  localStorage.setItem('formData', JSON.stringify(formData));
+}
+
 function sendData() {
   const formData = JSON.parse(localStorage.getItem('formData'));
-  
+
   // Perform data validation and send the data using the sendEmail function
   sendEmail(formData);
-  
+
   // Clear the form data from Local Storage after sending
   localStorage.removeItem('formData');
 }

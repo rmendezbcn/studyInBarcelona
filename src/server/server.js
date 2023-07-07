@@ -11,7 +11,7 @@ const port = 3001;
 // Enable CORS
 const corsOptions = {
   origin: (origin, callback) => {
-    const allowedOrigins = ['http://178.128.197.175', 'http://127.0.0.1'];
+    const allowedOrigins = ['https://studyinbarcelona.net/sendEmail', 'http://127.0.0.1'];
     const requestOrigin = origin;
 
     // Check if the request origin is allowed

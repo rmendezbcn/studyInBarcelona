@@ -48,6 +48,28 @@ label {
   font-weight: 400;
   padding-left: 5px;
 }
+.feedback-label {
+  text-transform: none;
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 1.3em;
+}
+.form-row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -5px;
+  margin-left: -5px;
+}
+.form-row > .col,
+.form-row > [class*='col-'] {
+  padding-right: 5px;
+  padding-left: 5px;
+}
+.form-group {
+  margin-bottom: 2.5em;
+}
 
 #contact {
   position: relative;
@@ -65,9 +87,11 @@ label {
   position: sticky;
   top: 30px;
   height: 580px;
-  
-  
 }
+.form-check-label {
+  font-size: 1em;
+} 
+  
 
 .modal p {
   font-size: 1em;

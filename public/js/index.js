@@ -113,8 +113,8 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-const formSaveBtn = document.getElementById('saveBtn');
-const formSendBtn = document.getElementById('sendBtn');
+const formSaveBtn = document.getElementById('feedbackSaveBtn');
+const formSendBtn = document.getElementById('feedbackSendBtn');
 
 formSaveBtn.addEventListener('click', saveFormData);
 formSendBtn.addEventListener('click', sendData);

@@ -2,16 +2,19 @@ import express from 'express';
 import cors from 'cors';
 import { sendEmail } from '../nodemailer.js';
 import path from 'path';
-import bodyParser from 'body-parser';
+
 
 const __dirname = path.dirname(new URL(import.meta.url).pathname);
 const app = express();
 const port = 3001;
 
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+
 // Enable CORS
 const corsOptions = {
   origin: (origin, callback) => {
-    const allowedOrigins = ['https://studyinbarcelona.net/sendEmail', 'http://127.0.0.1'];
+    const allowedOrigins = ['https://studyinbarcelona.net', 'http://127.0.0.1'];
     const requestOrigin = origin;
 
     // Check if the request origin is allowed
@@ -28,9 +31,6 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
-
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
 
 // Define the MIME types for different file extensions
 const mimeTypes = {

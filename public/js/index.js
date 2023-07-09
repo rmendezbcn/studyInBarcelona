@@ -24,7 +24,6 @@ sendBtn.addEventListener("click", function (event) {
     return; // Exit the function if any required field is empty
   }
 
-  
   let studentData = {
     name,
     email,
@@ -33,32 +32,11 @@ sendBtn.addEventListener("click", function (event) {
     mainInterest,
     comments
   }
-  
-
   console.log("this is the index.js ", studentData)
-
-  fetch('https://studyinbarcelona.net/sendEmail', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(studentData),
-  })
-    .then(function (response) {
-      if (response.ok) {
-        //alert('Email sent successfully!');
-        showConfirmationModal();
-        form.reset(); // Clear the form
-      } else {
-        throw new Error('Error occurred while sending email.');
-      }
-    })
-    .catch(function (error) {
-      console.error(error);
-      alert('An error occurred while sending the email.');
-    });
-    console.log('It went through');
+  
+  sendEmail(studentData);
 });
+
 
 function showConfirmationModal() {
   $('#confirmationModal').modal('show');

@@ -75,7 +75,7 @@ formSendBtn.addEventListener('click', function () {
   const formData = JSON.parse(localStorage.getItem('formData'));
   
   // Perform data validation and send the data using the sendEmail function
-  sendEmail(studentData)
+  sendEmail(formData)
     .then(function () {
       showConfirmationModal();
       form.reset(); // Clear the form

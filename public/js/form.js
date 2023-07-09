@@ -78,7 +78,6 @@ formSendBtn.addEventListener('click', function () {
   sendEmail(formData)
     .then(function () {
       showConfirmationModal();
-      form.reset(); // Clear the form
     })
     .catch(function (error) {
       console.error(error);

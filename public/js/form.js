@@ -49,7 +49,7 @@ const formSaveBtn = document.getElementById('feedbackSaveBtn');
 const formSendBtn = document.getElementById('feedbackSendBtn');
 
 formSaveBtn.addEventListener('click', saveFormData);
-formSendBtn.addEventListener('click', sendData);
+//formSendBtn.addEventListener('click', sendData);
 
 function saveFormData() {
   const formData = {};
@@ -75,8 +75,16 @@ formSendBtn.addEventListener('click', function () {
   const formData = JSON.parse(localStorage.getItem('formData'));
   
   // Perform data validation and send the data using the sendEmail function
-  sendEmail(formData);
-  showConfirmationModal()
+  sendEmail(studentData)
+    .then(function () {
+      showConfirmationModal();
+      form.reset(); // Clear the form
+    })
+    .catch(function (error) {
+      console.error(error);
+      alert('An error occurred while sending the email.');
+    });
+});
   // Clear the form data from Local Storage after sending
   localStorage.removeItem('formData');
 });

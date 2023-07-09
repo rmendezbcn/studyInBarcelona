@@ -34,8 +34,17 @@ sendBtn.addEventListener("click", function (event) {
   }
   console.log("this is the index.js ", studentData)
   
-  sendEmail(studentData);
+  sendEmail(studentData)
+    .then(function () {
+      showConfirmationModal();
+      form.reset(); // Clear the form
+    })
+    .catch(function (error) {
+      console.error(error);
+      alert('An error occurred while sending the email.');
+    });
 });
+
 
 
 function showConfirmationModal() {

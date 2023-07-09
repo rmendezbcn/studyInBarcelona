@@ -1,21 +1,21 @@
 function sendEmail(data) {
-  fetch('https://studyinbarcelona.net/sendEmail', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(data),
-  })
-    .then(function (response) {
-      if (response.ok) {
-        showConfirmationModal();
-        form.reset(); // Clear the form
-      } else {
-        throw new Error('Error occurred while sending email.');
-      }
+  return new Promise((resolve, reject) => {
+    fetch('https://studyinbarcelona.net/sendEmail', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
     })
-    .catch(function (error) {
-      console.error(error);
-      alert('An error occurred while sending the email.');
-    });
+      .then(function (response) {
+        if (response.ok) {
+          resolve(); // Resolve the promise for success
+        } else {
+          reject(new Error('Error occurred while sending email.')); // Reject the promise for failure
+        }
+      })
+      .catch(function (error) {
+        reject(error); // Reject the promise for any other error
+      });
+  });
 }

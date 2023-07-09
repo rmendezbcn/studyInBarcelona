@@ -84,7 +84,7 @@ formSendBtn.addEventListener('click', function () {
       console.error(error);
       alert('An error occurred while sending the email.');
     });
-});
+
   // Clear the form data from Local Storage after sending
   localStorage.removeItem('formData');
 });

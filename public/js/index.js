@@ -85,8 +85,8 @@ window.addEventListener('load', () => {
 async function fetchData(languageId) {
   try {
     // Make a GET request to the API based on the selected language
-    //const response = await fetch(`http://localhost:1337/api/index?_locale=${languageId}&populate=*`);
-    const response = await fetch(url_to_strapi.current + '/api/index?populate=*');
+    const response = await fetch(`${url_to_strapi.current}/api/index?locale=${languageId}&populate=*`);
+    //const response = await fetch(url_to_strapi.current + '/api/index?populate=*');
     const data = await response.json();
     //console.log(data)
     

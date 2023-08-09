@@ -1,3 +1,9 @@
+const url_to_strapi = {
+  current: 'http://localhost:1337',
+  //current: 'https://api.studyinbarcelona.net',
+}
+
+
 function saveFormData() {
   const formSections = document.getElementsByClassName('section-block');
   const formData = {};
@@ -164,7 +170,7 @@ async function sendFormDataToAPI(formData) {
 
   // Make the POST request to the API endpoint and handle the response
   try {
-    const response = await fetch('http://localhost:1337/api/clients', {
+    const response = await fetch(`${url_to_strapi.current}/api/clients`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

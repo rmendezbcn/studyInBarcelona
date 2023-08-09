@@ -1,3 +1,8 @@
+const url_to_strapi = {
+  current: 'http://localhost:1337',
+  //current: 'https://api.studyinbarcelona.net',
+}
+
 const sendBtn = document.getElementById("sendBtn");
 
 
@@ -70,7 +75,7 @@ window.addEventListener('load', () => {
 async function fetchData(languageId) {
     try {
         // Make a GET request to the API based on the selected language
-        const response = await fetch(`http://localhost:1337/api/partner?locale=${languageId}`);
+        const response = await fetch(`${url_to_strapi.current}/api/partner?locale=${languageId}`);
         const data = await response.json();
         
         // Pass the data object to the displayData function
@@ -117,7 +122,7 @@ function displayData(data, selectedLanguage) {
 async function fetchButtonText(languageId) {
   try {
     // Make a GET request to the API based on the selected language and include the 'contact_button' data
-    const response = await fetch(`http://localhost:1337/api/global-settings?locale=${languageId}&populate=contact_button`);
+    const response = await fetch(`${url_to_strapi.current}/api/global-settings?locale=${languageId}&populate=contact_button`);
     const data = await response.json();
     
     // Extract the button text data for the selected language
@@ -150,7 +155,7 @@ function displayButtonText(globalSettings, languageId) {
 async function fetchSiteMenu(languageId) {
   try {
     // Make a GET request to the API to fetch the site menu data based on the selected language
-    const response = await fetch(`http://localhost:1337/api/site-menus/1?populate=localizations`);
+    const response = await fetch(`${url_to_strapi.current}/api/site-menus/1?populate=localizations`);
     const data = await response.json();
 
     // Pass the site menu data to the displaySiteMenu function
@@ -189,7 +194,7 @@ function displaySiteMenu(menuData, languageId) {
 async function fetchFooterData(languageId) {
   try {
     // Make a GET request to the API based on the selected language
-    const response = await fetch(`http://localhost:1337/api/global-settings?locale=${languageId}&populate=footer`);
+    const response = await fetch(`${url_to_strapi.current}/api/global-settings?locale=${languageId}&populate=footer`);
     const data = await response.json();
     
     // Extract the footer data for the selected language
@@ -252,7 +257,7 @@ async function sendFormDataToAPI() {
 
   // Make the POST request to the API endpoint and handle the response
   try {
-    const response = await fetch('http://localhost:1337/api/potential-partners', {
+    const response = await fetch(`${url_to_strapi.current}/api/potential-partners`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

@@ -1,4 +1,7 @@
-
+const url_to_strapi = {
+  current: 'http://localhost:1337',
+  //current: 'https://api.studyinbarcelona.net',
+}
 
 $(window).on('load', function() {
   $('#wellcomeModal').modal('show');
@@ -83,7 +86,7 @@ async function fetchData(languageId) {
   try {
     // Make a GET request to the API based on the selected language
     //const response = await fetch(`http://localhost:1337/api/index?_locale=${languageId}&populate=*`);
-    const response = await fetch(`http://localhost:1337/api/index?populate=*`);
+    const response = await fetch(url_to_strapi.current + '/api/index?populate=*');
     const data = await response.json();
     //console.log(data)
     
@@ -131,9 +134,9 @@ function displayData(data, selectedLanguage) {
     servicesNoteElement.textContent = selectedAttributes.service_note;
 
     // Concatenate the localhost in the image URLs
-    const mainImageUrl = `http://localhost:1337${attributes.main_image.data.attributes.formats.large.url}`;
-    const imageValueProposal1Url = `http://localhost:1337${attributes.image_value_proposal_1.data.attributes.formats.medium.url}`;
-    const imageValueProposal2Url = `http://localhost:1337${attributes.image_value_proposal_2.data.attributes.formats.medium.url}`;
+    const mainImageUrl = url_to_strapi.current + attributes.main_image.data.attributes.formats.large.url;
+    const imageValueProposal1Url = url_to_strapi.current + attributes.image_value_proposal_1.data.attributes.formats.medium.url;
+    const imageValueProposal2Url = url_to_strapi.current + attributes.image_value_proposal_2.data.attributes.formats.medium.url;
 
     imageValueProposal1Element.src = imageValueProposal1Url;
     imageValueProposal2Element.src = imageValueProposal2Url;
@@ -177,12 +180,12 @@ function displayData(data, selectedLanguage) {
 async function fetchServicesData(languageId) {
   try {
     // Fetch all services data
-    const response = await fetch(`http://localhost:1337/api/services`);
+    const response = await fetch(`${url_to_strapi.current}/api/services`);
     const data = await response.json();
 
     // Fetch localizations for all services
     const localizationResponses = await Promise.all(
-      data.data.map((service) => fetch(`http://localhost:1337/api/services/${service.id}?populate=localizations`))
+      data.data.map((service) => fetch(`${url_to_strapi.current}/api/services/${service.id}?populate=localizations`))
     );
 
     const localizedServicesData = await Promise.all(localizationResponses.map((res) => res.json()));
@@ -242,7 +245,7 @@ function displayServices(servicesData) {
 async function fetchFooterData(languageId) {
   try {
     // Make a GET request to the API based on the selected language
-    const response = await fetch(`http://localhost:1337/api/global-settings?locale=${languageId}&populate=footer`);
+    const response = await fetch(`${url_to_strapi.current}/api/global-settings?locale=${languageId}&populate=footer`);
     const data = await response.json();
     
     // Extract the footer data for the selected language
@@ -280,7 +283,7 @@ function displayFooterContent(footerData) {
 async function fetchButtonText(languageId) {
   try {
     // Make a GET request to the API based on the selected language and include the 'contact_button' data
-    const response = await fetch(`http://localhost:1337/api/global-settings?locale=${languageId}&populate=contact_button`);
+    const response = await fetch(`${url_to_strapi.current}/api/global-settings?locale=${languageId}&populate=contact_button`);
     const data = await response.json();
     
     // Extract the button text data for the selected language
@@ -312,7 +315,7 @@ function displayButtonText(globalSettings, languageId) {
 async function fetchSiteMenu(languageId) {
   try {
     // Make a GET request to the API to fetch the site menu data based on the selected language
-    const response = await fetch(`http://localhost:1337/api/site-menus/1?populate=localizations`);
+    const response = await fetch(`${url_to_strapi.current}/api/site-menus/1?populate=localizations`);
     const data = await response.json();
 
     // Pass the site menu data to the displaySiteMenu function
@@ -357,7 +360,7 @@ languageButtons.forEach(button => {
     if (selectedLanguage === 'english' && defaultModalContent !== null) {
       displayModalContent(defaultModalContent);
     } else {
-      const response = await fetch(`http://localhost:1337/api/modals?locale=${selectedLanguage}`);
+      const response = await fetch(`${url_to_strapi.current}/api/modals?locale=${selectedLanguage}`);
       const data = await response.json();
 
       if (data.data) {
@@ -385,7 +388,7 @@ function displayModalContent(attributes) {
 let defaultModalContent = null;
 
 window.addEventListener('load', async () => {
-  const response = await fetch(`http://localhost:1337/api/modals?locale=en`);
+  const response = await fetch(`${url_to_strapi.current}/api/modals?locale=en`);
   const data = await response.json();
 
   if (data.data && data.data.length > 0) {
@@ -402,7 +405,7 @@ languageButtons.forEach(button => {
     if (selectedLanguage === 'english' && defaultModalContent !== null) {
       displayModalContent(defaultModalContent);
     } else {
-      const response = await fetch(`http://localhost:1337/api/modals?locale=${selectedLanguage}`);
+      const response = await fetch(`${url_to_strapi.current}/api/modals?locale=${selectedLanguage}`);
       const data = await response.json();
 
       if (data.data) {

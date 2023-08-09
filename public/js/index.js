@@ -230,7 +230,7 @@ function displayServices(servicesData) {
 
     // Populate the list item with service data
     li.innerHTML = `
-      
+      <i class="${service.attributes.icon} services-icon"></i>
       <strong class="fs-4">${service.attributes.name}</strong>
       <p class="fs-5 pb-4"><strong>${service.attributes.description}</strong></p>
     `;

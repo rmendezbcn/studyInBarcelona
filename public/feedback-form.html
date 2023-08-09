@@ -34,21 +34,32 @@
 					<!-- Logo
 					============================================= -->
 					<div id="logo" class="">
-						<a href="index.html" class="standard-logo" data-dark-logo="./images/panot_de_flor_60.png"><img src="./images/panot_de_flor_60.png" alt="Study in Barcelona logo" height="40"></a>
-						<a href="index.html" class="retina-logo" data-dark-logo="./images/panot_de_flor_140.png"><img src="./images/panot_de_flor_140.png" alt="Study in Barcelona logo"></a>
+						<a href="index.html" class="standard-logo" data-dark-logo="./images/logo_sib_dark_background.png"><img src="./images/logo_sib_light_background.png" alt="Study in Barcelona logo" height="40"></a>
+						<a href="index.html" class="retina-logo" data-dark-logo="./images/logo_sib_dark_background.png"><img src="./images/logo_sib_light_background.png" alt="Study in Barcelona logo"></a>
 					</div><!-- #logo end -->
           
+					<!-- language selector -->
+          <div class="pl-4 pt-2 mt-1 inline-block">
+						<select id="languageSelector" class="">
+							<option value="en">English</option>
+							<option value="es">Español</option>
+							<option value="ca-ES">Català</option>
+						</select>
+					</div> <!-- end of language selector -->
+
 					<!-- Primary Navigation
             ============================================= -->
             
             <nav id="primary-menu">
 						<ul class="one-page-menu">
-							<li class="current"><a style="padding: 20px 15px;" href="index.html"><div>Home</div></a></li>
-							<li><a style="padding: 20px 15px;" href="index.html#service"><div>Nuestros Servicios</div></a></li>
-							<li><a style="padding: 20px 15px;" href="#"><div>Acerca de nosotros</div></a></li>
+							<li id="homeMenuItem" class="current"><a style="padding: 20px 15px;" href="index.html"><div>Home</div></a></li>
+							<li id="serviceMenuItem"><a style="padding: 20px 15px;" href="#service"><div>Nuestros Servicios</div></a></li>
+							<li id="partnerMenuItem"><a style="padding: 20px 15px;" href="partnership.html"><div>Partners</div></a></li>
+							<li id="aboutMenuItem"><a style="padding: 20px 15px;" href="about.html"><div>Acerca de nosotros</div></a></li>
 							<!-- <li><a style="padding: 20px 15px;" href="#"><div>Testimonials</div></a></li> -->
 						</ul> 
 					</nav><!-- #primary-menu end -->
+
 				</div>
 
 			</div>
@@ -61,378 +72,155 @@
 
 			<div class="content-wrap">
 
-				<div class="container clearfix"> <!-- value proposal 1 -->
+				<div class="container clearfix"> <!-- form -->
 
 					<div class="row mb-5"> 
 						<div class="col-12 my-2">
 							<div class="heading-block noborder">
-								<h1 style="text-transform: none;">Bienvenido!</h1>
-								<span>Para darte el mejor servicio necesitamos que rellenes este formulario, gracias...</span>
-								<span>Tus datos son siempre confidenciales</span>
+								<h1 id="wellcome" style="text-transform: none;">Bienvenido!</h1>
+								<span id="wellcome_message">Para darte el mejor servicio necesitamos que rellenes este formulario, gracias...</span>
+								<span id="form_privacy_note">Tus datos son siempre confidenciales</span>
 							</div>
 							
-							<div> <!-- contact data-->
-								<h2>Datos de contacto</h2>
-								<div class="form-group">
-									<label for="contact-name" class="feedback-label">Nombre completo</label>
-									<input id="contact-name" type="text" class="form-control" placeholder="Tu nombre completo es...">
+							<div class="section-block"> <!-- contact data-->
+								<h2 id="section_title_personal_data">Datos de contacto</h2>
+								<div class="form-group children">
+									<label for="name_field" class="feedback-label">Nombre completo</label>
+									<input id="name_field" type="text" class="form-control" required placeholder="">
 								</div>
 								
-								<div class="form-row">
-									<div class="form-group col-md-6 pr-5">
-										<label for="contact-email" class="feedback-label">Email</label>
-										<input id="contact-email" type="email" class="form-control" placeholder="Tu email es...">
+								<div class="row">
+									<div class="form-group col-md-6 children">
+										<label for="email_field" class="feedback-label">Email</label>
+										<input id="email_field" type="text" class="form-control" required placeholder="">
 									</div>
-									<div class="form-group col-md-6">
-										<label for="contact-whatsupp" class="feedback-label">Número de Whatsup </label>
-										<input id="contact-whatsupp" type="phone" class="form-control" placeholder="(+55) 555-555-555 ó (+555) 555-5555">
+									<div class="form-group col-md-6 children">
+										<label for="phone_field" class="feedback-label">Número de Whatsup </label>
+										<input id="phone_field" type="text" class="form-control" required placeholder="(+55) 555-555-555 or (+555) 5555-5555">
 									</div>
 								</div>
 							</div> <!-- end of contact data -->
 
-							<div> <!-- Lenguas -->
-								<h2 class="mt-4 mb-2">Conocimientos sobre idiomas</h2>
+							<div class="section-block"> <!-- Lenguas -->
+								<h2 id="section_title_language" class="mt-4 mb-2">Conocimientos sobre idiomas</h2>
+								<div id="languageContainer" class=""></div>
 								
-								<h3 class="mt-4 mb-3">Lengua española</h3> <!-- Spanish -->
-								<div class="form-row"> 
-									<div class="col-3">
-										<div class="form-check">
-											<input id="spanishMotherTongue" type="checkbox" class="form-check-input">
-											<label for="spanishMotherTongue" class="form-check-label">Lengua materna</label>
-										</div>
-										<div class="form-check">
-											<input id="spanishNone" type="checkbox" class="form-check-input">
-											<label for="spanishNone" class="form-check-label">Ninguno</label>
-										</div>
-										<div class="form-check">
-											<input id="spanishDontKnow" type="checkbox" class="form-check-input">
-											<label for="spanishDontKnow" class="form-check-label">No lo sé</label>
-										</div>
-									</div>
-									<div class="col-3">
-										<div class="form-check">
-											<input id="spanishA1" type="checkbox" class="form-check-input">
-											<label for="spanishA1" class="form-check-label">A1 (básico 1)</label>
-										</div>
-										<div class="form-check">
-											<input id="spanishA2" type="checkbox" class="form-check-input">
-											<label for="spanishA2" class="form-check-label">A2 (básico 2)</label>
-										</div>
-									</div>
-									<div class="col-3">
-										<div class="form-check">
-											<input id="spanishB1" type="checkbox" class="form-check-input">
-											<label for="spanishB1" class="form-check-label">B1 (intermedio 1)</label>
-										</div>
-										<div class="form-check">
-											<input id="spanishB2" type="checkbox" class="form-check-input">
-											<label for="spanishB2" class="form-check-label">B2 (intermedio 2)</label>
-										</div>
-									</div>
-									<div class="col-3">
-										<div class="form-check">
-											<input id="spanishC1" type="checkbox" class="form-check-input">
-											<label for="spanishC1" class="form-check-label">C1 (avanzado 1)</label>
-										</div>
-										<div class="form-check">
-											<input id="spanishC2" type="checkbox" class="form-check-input">
-											<label for="spanishC2" class="form-check-label">C2 (avanzado 2)</label>
-										</div>
-									</div>
-								</div> <!-- end of Spanish -->
-
-								<h3 class="mt-4 mb-3">Lengua catalana</h3> <!-- Catalan -->
-								<div class="form-row"> 
-									<div class="col-3">
-										<div class="form-check">
-											<input id="catalanMotherTongue" type="checkbox" class="form-check-input">
-											<label for="catalanMotherTongue" class="form-check-label">Lengua materna</label>
-										</div>
-										<div class="form-check">
-											<input id="catalanNone" type="checkbox" class="form-check-input">
-											<label for="catalanNone" class="form-check-label">Ninguno</label>
-										</div>
-										<div class="form-check">
-											<input id="catalanDontKnow" type="checkbox" class="form-check-input">
-											<label for="catalanDontKnow" class="form-check-label">No lo sé</label>
-										</div>
-									</div>
-									<div class="col-3">
-										<div class="form-check">
-											<input id="catalanA1" type="checkbox" class="form-check-input">
-											<label for="catalanA1" class="form-check-label">A1 (básico 1)</label>
-										</div>
-										<div class="form-check">
-											<input id="catalanA2" type="checkbox" class="form-check-input">
-											<label for="catalanA2" class="form-check-label">A2 (básico 2)</label>
-										</div>
-									</div>
-									<div class="col-3">
-										<div class="form-check">
-											<input id="catalanB1" type="checkbox" class="form-check-input">
-											<label for="catalanB1" class="form-check-label">B1 (intermedio 1)</label>
-										</div>
-										<div class="form-check">
-											<input id="catalanB2" type="checkbox" class="form-check-input">
-											<label for="catalanB2" class="form-check-label">B2 (intermedio 2)</label>
-										</div>
-									</div>
-									<div class="col-3">
-										<div class="form-check">
-											<input id="catalanC1" type="checkbox" class="form-check-input">
-											<label for="catalanC1" class="form-check-label">C1 (avanzado 1)</label>
-										</div>
-										<div class="form-check">
-											<input id="catalanC2" type="checkbox" class="form-check-input">
-											<label for="catalanC2" class="form-check-label">C2 (avanzado 2)</label>
-										</div>
-									</div>
-								</div> <!-- end of Catalan -->
-
-								<h3 class="mt-4 mb-3">Lengua inglesa</h3> <!-- English -->
-								<div class="form-row"> 
-									<div class="col-3">
-										<div class="form-check">
-											<input id="englishMotherTongue" type="checkbox" class="form-check-input">
-											<label for="englishMotherTongue" class="form-check-label">Lengua materna</label>
-										</div>
-										<div class="form-check">
-											<input id="englishNone" type="checkbox" class="form-check-input">
-											<label for="englishNone" class="form-check-label">Ninguno</label>
-										</div>
-										<div class="form-check">
-											<input id="englishDontKnow" type="checkbox" class="form-check-input">
-											<label for="englishDontKnow" class="form-check-label">No lo sé</label>
-										</div>
-									</div>
-									<div class="col-3">
-										<div class="form-check">
-											<input id="englishA1" type="checkbox" class="form-check-input">
-											<label for="englishA1" class="form-check-label">A1 (básico 1)</label>
-										</div>
-										<div class="form-check">
-											<input id="englishA2" type="checkbox" class="form-check-input">
-											<label for="englishA2" class="form-check-label">A2 (básico 2)</label>
-										</div>
-									</div>
-									<div class="col-3">
-										<div class="form-check">
-											<input id="englishB1" type="checkbox" class="form-check-input">
-											<label for="englishB1" class="form-check-label">B1 (intermedio 1)</label>
-										</div>
-										<div class="form-check">
-											<input id="englishB2" type="checkbox" class="form-check-input">
-											<label for="englishB2" class="form-check-label">B2 (intermedio 2)</label>
-										</div>
-									</div>
-									<div class="col-3">
-										<div class="form-check">
-											<input id="englishC1" type="checkbox" class="form-check-input">
-											<label for="englishC1" class="form-check-label">C1 (avanzado 1)</label>
-										</div>
-										<div class="form-check">
-											<input id="englishC2" type="checkbox" class="form-check-input">
-											<label for="englishC2" class="form-check-label">C2 (avanzado 2)</label>
-										</div>
-									</div>
-								</div> <!-- en of English -->
-
-								<h3 class="mt-4 mb-3">Otros</h3>  <!-- others -->
-								<div class="form-group">
-									<input id="otherLanguages" type="text" class="form-control" placeholder="Qué otros idiomas conoces?">
+								<h3 id="section_subtitle_language_others" class="mt-4 mb-3"></h3>  <!-- others -->
+								<div class="form-group children">
+									<input id="otherLanguages" type="text" class="form-control" placeholder="">
 								</div>  <!-- end of others -->
 							</div> <!-- end of Lenguas -->
 
-							<div> <!-- completed studies -->
-								<h2 class="mt-5">Nivel de estudios</h2>
-								<h3 class="mt-4 mb-3">Estudios acabados en tu país</h3>
-								<div class="form-row">
-									<div class="col-4">
-										<div class="form-check">
-											<input id="completedProfessional" type="checkbox" class="form-check-input">
-											<label for="completedProfessional" class="form-check-label">Formación profesional</label>
-										</div>
-										<div class="form-check">
-											<input id="completedBachelor" type="checkbox" class="form-check-input">
-											<label for="completedBachelor" class="form-check-label">Bachiller</label>
-										</div>
-									</div>
-									<div class="col-4">
-										<div class="form-check">
-											<input id="completedUniversity" type="checkbox" class="form-check-input">
-											<label for="completedUniversity" class="form-check-label">Grado universitario</label>
-										</div>
-										<div class="form-check">
-											<input id="completedMaster" type="checkbox" class="form-check-input">
-											<label for="completedMaster" class="form-check-label">Master/Postgrado</label>
-										</div>
-									</div>
-									<div class="col-4">
-										<div class="form-check">
-											<input id="completedDoctor" type="checkbox" class="form-check-input">
-											<label for="completedDoctor" class="form-check-label">Doctorado</label>
-										</div>
-										<div class="form-check">
-											<input id="completedOther" type="checkbox" class="form-check-input">
-											<label for="completedOther" class="form-check-label">Otros</label>
-										</div>
-									</div>
+							<div class="section-block"> <!-- completed studies -->
+								<h2 id="section_title_educational_level" class="mt-5">Nivel de estudios</h2>
+								<!--<h3 id="section_subtitle_finished_education" class="mt-4 mb-3">Estudios acabados en tu país</h3>-->
+								<div id="educationContainer">
+									<!-- div for complete and ingoing studies-->
 								</div>
-							</div> <!-- end of completed studies -->
 									
-							<div> <!-- ongoing studies -->
-								<h3 class="mt-4 mb-3">Estudios en curso o no acabados en tu país</h3>
-								<div class="form-row">
-									<div class="col-4">
-										<div class="form-check">
-											<input id="ongoingProfessional" type="checkbox" class="form-check-input">
-											<label for="ongoingProfessional" class="form-check-label">Formación profesional</label>
-										</div>
-										<div class="form-check">
-											<input id="ongoingBachelor" type="checkbox" class="form-check-input">
-											<label for="ongoingBachelor" class="form-check-label">Bachiller</label>
-										</div>
-									</div>
-									<div class="col-4">
-										<div class="form-check">
-											<input id="ongoingUniversity" type="checkbox" class="form-check-input">
-											<label for="ongoingUniversity" class="form-check-label">Grado universitario</label>
-										</div>
-										<div class="form-check">
-											<input id="ongoingMaster" type="checkbox" class="form-check-input">
-											<label for="ongoingMaster" class="form-check-label">Master/Postgrado</label>
-										</div>
-									</div>
-									<div class="col-4">
-										<div class="form-check">
-											<input id="ongoingDoctor" type="checkbox" class="form-check-input">
-											<label for="ongoingDoctor" class="form-check-label">Doctorado</label>
-										</div>
-										<div class="form-check">
-											<input id="ongoingOther" type="checkbox" class="form-check-input">
-											<label for="ongoingOther" class="form-check-label">Otros</label>
-										</div>
-									</div>
-								</div>
-							</div> <!-- end of ongoing studies -->
-
-							<div> <!-- seeking to study -->
-								<h3 class="mt-4 mb-3">En general, qué te interesa estudiar en Barcelona</h3>
-								<div class="form-row">
-									<div class="col-4">
-										<div class="form-check">
+								<div> <!-- seeking to study -->
+									<h3 id="section_subtitle_general_education_interest" class="mt-4 mb-3">En general, qué te interesa estudiar en Barcelona</h3>
+									<div class="form-row children">
+										<div class="form-check col-3 px-2">
 											<input id="seekingSpanish" type="checkbox" class="form-check-input">
 											<label for="seekingSpanish" class="form-check-label">Lengua castellana</label>
 										</div>
-										<div class="form-check">
+										<div class="form-check col-3 px-2">
 											<input id="seekingCatalan" type="checkbox" class="form-check-input">
 											<label for="seekingCatalan" class="form-check-label">Lengua catalana</label>
 										</div>
-										<div class="form-check">
-											<input id="seekingProfessional" type="checkbox" class="form-check-input">
-											<label for="seekingProfessional" class="form-check-label">Formación profesional</label>
+										<div class="form-check col-3 px-2">
+											<input id="education_level_1" type="checkbox" class="form-check-input">
+											<label for="education_level_1" class="form-check-label">Formación profesional</label>
+										</div>
+										<div class="form-check col-3 px-2">
+											<input id="education_level_2" type="checkbox" class="form-check-input">
+											<label for="education_level_2" class="form-check-label">Grado universitario</label>
+										</div>
+										<div class="form-check col-3 px-2">
+											<input id="education_level_3" type="checkbox" class="form-check-input">
+											<label for="education_level_3" class="form-check-label">Master/Postgrado</label>
+										</div>
+										<div class="form-check col-3 px-2">
+											<input id="education_level_5" type="checkbox" class="form-check-input">
+											<label for="education_level_5" class="form-check-label">Doctorado</label>
+										</div>
+										<div class="form-check col-3 px-2">
+											<input id="education_level_6" type="checkbox" class="form-check-input">
+											<label for="education_level_6" class="form-check-label">Otros</label>
 										</div>
 									</div>
-									<div class="col-4">
-										<div class="form-check">
-											<input id="seekingUniversity" type="checkbox" class="form-check-input">
-											<label for="seekingUniversity" class="form-check-label">Grado universitario</label>
-										</div>
-										<div class="form-check">
-											<input id="seekingMaster" type="checkbox" class="form-check-input">
-											<label for="seekingMaster" class="form-check-label">Master/Postgrado</label>
-										</div>
-									</div>
-									<div class="col-4">
-										<div class="form-check">
-											<input id="seekingDoctor" type="checkbox" class="form-check-input">
-											<label for="seekingDoctor" class="form-check-label">Doctorado</label>
-										</div>
-										<div class="form-check">
-											<input id="seekingOther" type="checkbox" class="form-check-input">
-											<label for="seekingOther" class="form-check-label">Otros</label>
-										</div>
-									</div>
-								</div>
-							</div> <!-- end of seeking to study -->
+								</div> <!-- end of seeking to study -->
 
-							<div class="mt-4"> <!-- specific course -->
-								<h3 class="mb-2">Qué curso específicamente quieres hacer en Barcelona?</h3>
-								<div class="form-group">
-									<textarea id="specificCourse" class="form-control" cols="30" rows="3" placeholder="El curso concreto que quiero hacer es..."></textarea>
-								</div>
-							</div> <!-- end of specific course -->
+								<div class="mt-4"> <!-- specific course -->
+									<h3 id="section_subtitle_specific_course" class="mb-2">Qué curso específicamente quieres hacer en Barcelona?</h3>
+									<div class="form-group children">
+										<textarea id="specificCourse" class="form-control" cols="30" rows="3" placeholder=""></textarea>
+									</div>
+								</div> <!-- end of specific course -->
+								<div> <!-- language of studies -->
 
-							<div> <!-- language of studies -->
-								<h3 class="mt-4 mb-3">En qué idioma prefieres que se impartan tus estudios en Barcelona</h3>
-								<div class="form-row">
-									<div class="col-4">
-										<div class="form-check">
+									<h3 id="section_title_teaching_language" class="mt-4 mb-3">En qué idioma prefieres que se impartan tus estudios en Barcelona</h3>
+									<div class="form-row children">	
+										<div class="form-check col-4 px-2">
 											<input id="languageSpanish" type="checkbox" class="form-check-input">
 											<label for="languageSpanish" class="form-check-label">Lengua castellana</label>
 										</div>
-									</div>
-									<div class="col-4">
-										<div class="form-check">
+									
+										<div class="form-check col-4 px-2">
 											<input id="languageCatalan" type="checkbox" class="form-check-input">
 											<label for="languageCatalan" class="form-check-label">Lengua catalana</label>
 										</div>
-									</div>
-									<div class="col-4">
-										<div class="form-check">
+									
+										<div class="form-check col-4 px-2">
 											<input id="languageEnglish" type="checkbox" class="form-check-input">
 											<label for="languageEnglish" class="form-check-label">Lengua inglesa</label>
 										</div>
 									</div>
-								</div>
-							</div> <!-- end of language of studies -->
+								</div> <!-- end of language of studies preferences -->
+
+							</div> <!-- end of education background and preferences --> 
 							
-							<div> <!-- others -->
-								<h2 class="mt-5 mb-3">Otros aspectos sobre tus estudios en Barcelona</h2>
-								<h3>Alojamiento</h3>
-								<div class="form-row">
-									<div class="col-4">
-										<div class="form-check">
-											<input id="othersFamily" type="checkbox" class="form-check-input">
-											<label for="othersFamily" class="form-check-label">En una familia</label>
-										</div>
+							<div class="section-block"> <!-- others -->
+								<h2 id="section_title_others" class="mt-5 mb-3">Otros aspectos sobre tus estudios en Barcelona</h2>
+								<h3 id="section_subtitle_others_1">Alojamiento</h3>
+								<div class="form-row children">
+									<div class="form-check col-4 px-2">
+										<input id="others_1_field_1" type="checkbox" class="form-check-input">
+										<label for="others_1_field_1" class="form-check-label">En una familia</label>
 									</div>
-									<div class="col-4">
-										<div class="form-check">
-											<input id="othersFlat" type="checkbox" class="form-check-input">
-											<label for="othersFlat" class="form-check-label">Piso compartido</label>
-										</div>
+								
+									<div class="form-check col-4 px-2">
+										<input id="others_1_field_2" type="checkbox" class="form-check-input">
+										<label for="others_1_field_2" class="form-check-label">Piso compartido</label>
 									</div>
-									<div class="col-4">
-										<div class="form-check">
-											<input id="othersStudentHousing" type="checkbox" class="form-check-input">
-											<label for="othersStudentHousing" class="form-check-label">Residencia de estudiantes</label>
-										</div>
+								
+									<div class="form-check col-4 px-2">
+										<input id="others_1_field_3" type="checkbox" class="form-check-input">
+										<label for="others_1_field_3" class="form-check-label">Residencia de estudiantes</label>
 									</div>
 								</div>
-								<h3 class="mt-4 mb-3">Tipo de centro educativo</h3>
-								<div class="form-row">
-									<div class="col-4">
-										<div class="form-check">
-											<input id="orgTypePublic" type="checkbox" class="form-check-input">
-											<label for="orgTypePublic" class="form-check-label">Centro público</label>
-										</div>
+								<h3 id="section_subtitle_others_2" class="mt-4 mb-3">Tipo de centro educativo</h3>
+								<div class="form-row children">
+									<div class="form-check col-4 px-2">
+										<input id="others_2_field_1" type="checkbox" class="form-check-input">
+										<label for="others_2_field_1" class="form-check-label">Centro público</label>
 									</div>
-									<div class="col-4">
-										<div class="form-check">
-											<input id="orgTypePrivate" type="checkbox" class="form-check-input">
-											<label for="orgTypePrivate" class="form-check-label">Centro privado</label>
-										</div>
+								
+									<div class="form-check  col-4 px-2">
+										<input id="others_2_field_2" type="checkbox" class="form-check-input">
+										<label for="others_2_field_2" class="form-check-label">Centro privado</label>
 									</div>
 								</div>
 							</div> <!-- end of Others -->
 							
-							<div class="mt-5">  <!-- questions -->
-								<h2 class="mb-2">Comentarios</h2>
-								<div class="form-group">
-									<textarea id="finalComments" class="form-control" cols="30" rows="3" placeholder="Si tienes algo que nos quieres explicar, puedes hacerlo aquí..."></textarea>
+							<div class="section-block mt-4">  <!-- questions -->
+								<h2 id="section_title_comments" class="mb-2"></h2>
+								<div class="form-group children">
+									<textarea id="finalComments" class="form-control" cols="30" rows="3" placeholder=""></textarea>
 								</div>
 							</div>  <!-- end of questions -->
+
 							<div class="col-12 d-flex justify-content-end">
 								<button type="submit" id="feedbackSaveBtn" name="sendBtn" class="btn btn-secondary">Save & finish later</button>
 								<button type="button" id="feedbackSendBtn" class="btn btn-success mx-2" data-toggle="modal" data-target="confirmationModal">Send the data</button>
@@ -441,7 +229,7 @@
 						</div>
 					</div> 
 
-				</div> <!-- end of value proposal 1 -->
+				</div> <!-- end of form -->
 				
 			</div>
 		</section><!-- #content end -->
@@ -471,7 +259,7 @@
 
 
     
-    <!-- Footer
+      <!-- Footer
 		============================================= -->
 		<footer id="footer" class="" style="background-color: rgb(3, 73, 130);">
 
@@ -486,9 +274,9 @@
 						<div class="col_half" style="color: whitesmoke; font-size: 1.8rem;">
 
               <div class="row col-12">
-                <div class="d-flex align-items-end">
-                  <img src="./images/panot_de_flor_60.png" width="60" height="auto" alt="" >
-									<span class="pl-4 fs-4" style="color: whitesmoke;"> Study in Barcelona</span>
+                <div>
+                  <img id="logoDarkBackground" src="./images/logo_sib_60_dark_background.png" width="60" height="auto" alt="" >
+									<p class="fs-4" style="color: whitesmoke; display: inline;"> Study in Barcelona</p>
 								</div>
               </div>
                 
@@ -496,17 +284,17 @@
               
               <div class="pt-2 clearfix">
 
-								<p class="fs-6"> Nuestra misión es <em>orientarte</em> en tu camino al <em> éxito!</em></p>
+								<p id="footerMission" class="fs-6"> Nuestra misión es <em>orientarte</em> en tu camino al <em> éxito!</em></p>
 
 								<div class="fs-6">
-									<address>
+									<address id="footerHeadquartersAddress">
 										<strong>Oficinas:</strong><br>
 										Calle Provenza 455<br>
 										08025 Barcelona<br>
                     España
 									</address>
-									<abbr title="Phone Number"><strong>Teléfono:</strong></abbr> (+34) 654 763 251<br>
-									<abbr title="Email Address"><strong>Email:</strong></abbr> info@studyinbarcelona.net 
+									<abbr id="contactName1" title="Phone "><strong>Teléfono:</strong></abbr> <abbr id="contactValue1" title="Number">(+34) 636 198 598</abbr> <br>
+									<abbr id="contactName2" title="Email "><strong>Email:</strong></abbr> <abbr id="contactValue2" title="Address">info@studyinbarcelona.net</abbr>  
 								</div>
 
 							</div>
@@ -520,7 +308,7 @@
 							<div class="widget clearfix">
 								
 								<div style="position: relative;">
-                  <img src="./images/headquarters.png" alt="Headquarters in the map: Provença street, 455" style="height: 400px; object-fit: cover; border-radius: 15px;">
+                  <img id="footerHeadquartersImage" src="./images/headquarters.png" alt="Headquarters in the map: Provença street, 455" style="height: 400px; object-fit: cover; border-radius: 15px;">
 									<i class="icon-map-marker1 fs-1" style="position: absolute; color: #f64904; top: 59%; right: 21%;"></i>
 								</div>
 								
@@ -571,7 +359,8 @@
 	<script src="./js/plugins.js"></script>
 	<script src="./js/functions.js"></script>
 	<script src="./js/form.js"></script>
-	<script src="./js/sendEmail.js"></script>
+	<script src=".js/feedback.js"></script>
+	<!--<script src="./js/sendEmail.js"></script>-->
  	<!--<script type="module" src="{{mainJs}}"></script>-->
 
 

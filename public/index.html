@@ -34,39 +34,54 @@
 					<!-- Logo
 					============================================= -->
 					<div id="logo" class="">
-						<a href="index.html" class="standard-logo" data-dark-logo="./images/panot_de_flor_60.png"><img src="./images/panot_de_flor_60.png" alt="Study in Barcelona logo" height="40"></a>
-						<a href="index.html" class="retina-logo" data-dark-logo="./images/panot_de_flor_140.png"><img src="./images/panot_de_flor_140.png" alt="Study in Barcelona logo"></a>
+						<a href="index.html" class="standard-logo" data-dark-logo="./images/panot_de_flor_60.png"><img src="./images/logo_sib_light_background.png" alt="Study in Barcelona logo" height="40"></a>
+						<a href="index.html" class="retina-logo" data-dark-logo="./images/panot_de_flor_140.png"><img src="./images/logo_sib_light_background.png" alt="Study in Barcelona logo"></a>
 					</div><!-- #logo end -->
+
+					<!-- language selector -->
+          <div class="pl-4 pt-2 mt-1 inline-block">
+						<select id="languageSelector" class="">
+							<option value="en">English</option>
+							<option value="es">Español</option>
+							<option value="ca-ES">Català</option>
+						</select>
+					</div> <!-- end of language selector -->
           
 					<!-- Primary Navigation
             ============================================= -->
             
-            <nav id="primary-menu">
+					<nav id="primary-menu">
 						<ul class="one-page-menu">
-							<li class="current"><a style="padding: 20px 15px;" href="#" data-href="#header"><div>Home</div></a></li>
-							<li><a style="padding: 20px 15px;" href="#service"><div>Nuestros Servicios</div></a></li>
-							<li><a style="padding: 20px 15px;" href="./about.html"><div>Acerca de nosotros</div></a></li>
+							<li id="homeMenuItem" class="current"><a style="padding: 20px 15px;" href="#" data-href="#header"><div>Home</div></a></li>
+							<li id="serviceMenuItem"><a style="padding: 20px 15px;" href="#service"><div>Nuestros Servicios</div></a></li>
+							<li id="partnerMenuItem"><a style="padding: 20px 15px;" href="partnership.html"><div>Partners</div></a></li>
+							<li id="aboutMenuItem"><a style="padding: 20px 15px;" href="./about.html"><div>Acerca de nosotros</div></a></li>
 							<!-- <li><a style="padding: 20px 15px;" href="#"><div>Testimonials</div></a></li> -->
 						</ul> 
 					</nav><!-- #primary-menu end -->
+
 				</div>
 
 			</div>
 
 		</header><!-- #header end -->
 
-    <section id="slider" class="slider-element slider-parallax full-screen dark" style="background: url(./images/istockphoto-1403429311-1024x1024.jpg) center center no-repeat; background-size: cover">
+    <section 
+			id="slider" 
+			class="slider-element slider-parallax full-screen dark" 
+			style="background: url(./images/istockphoto-1403429311-1024x1024.jpg) center center no-repeat; background-size: cover"
+		>
 
 			<div class="slider-parallax-inner"> <!-- style="position: relative;"-->
 
 				<div class="container-fluid vertical-middle clearfix" style="background-color: rgba(245, 245, 245, 0.553);"> <!-- style="position: absolute; top: 90%; left: 35%;" -->
 					
 					<div class="heading-block title-center nobottomborder nobottommargin pt-4" > <!-- style="position: absolute; top: 75%; left: 45%;"-->
-						<h1 class="pt-2 mb-1" style="text-transform: none; color: #003f8b;">Quieres estudiar en Barcelona?</h1>
+						<h1 id="slogan" class="pt-2 mb-1" style="text-transform: none; color: #003f8b;">Quieres estudiar en Barcelona?</h1>
 					</div>
 						
 					<div class="center bottommargin">
-						<a href="#contact" class="button button-xlarge button-circle nobottommargin" style="background-color: #8f165e;"><i class="icon-star3"></i>Contacta con nosotros ya!</a>
+						<a id="mainButton" href="feedback-form.html" class="button button-xlarge button-circle nobottommargin" style="background-color: #8f165e;"><i class="icon-star3"></i>Contacta con nosotros ya!</a>
 					</div>
 
 				</div>
@@ -86,21 +101,22 @@
 					<div class="row"> 
 						<div class="col-md-6 my-2">
 							<div class="heading-block noborder">
-								<h2 style="text-transform: none; color: #003f8b;"><span style="color: #8f165e;"> Study in Barcelona</span> es tu puerta al éxito académico</h2>
+								<h2 id="titleValueProposal1" style="text-transform: none; color: #003f8b;"><span style="color: #8f165e;"> Study in Barcelona</span> es tu puerta al éxito académico</h2>
 							</div>
 
 							<div>
-								<p>
-									Si estás considerando Barcelona para aprender idiomas, acceder a la universidad, hacer un máster o un doctorado,
-									<strong>solicita ahora mismo un informe especializado gratuito</strong> y conoce los
+								<p id="bodyValueProposal1">
+									<!--Si estás considerando Barcelona para aprender idiomas, acceder a la universidad, hacer un máster o un doctorado,
+									<strong style="font-weight: 600; background-color: #e1f013;">solicita ahora mismo un informe especializado gratuito</strong> y conoce los
 									requisitos legales para conseguir tu visado de estudiante, ya sea en origen o desde la misma Barcelona, 
-									ciudad europea líder en excelencia educativa y científica. 
+									ciudad europea líder en excelencia educativa y científica. -->
 								</p>
 								
 							</div>
 							<div class="center pt-3 mb-3">
 								<a 
-									href="#contact" class="button button-xlarge button-circle" 
+									id="contactButton1"
+									href="feedback-form.html" class="button button-xlarge button-circle" 
 									data-animate="bounceInLeft"
 									style="background-color: #8f165e; text-transform: none;">
 									<i class="icon-user-edit"></i> 
@@ -110,7 +126,7 @@
 						</div>
 						<div class="col-md-6 d-flex align-items-center">
 							<div class="" style="position: relative;">
-								<img src="./images/istockphoto-1403429306-1024x1024.jpg" alt="" style="height: 530px; object-fit: cover; border-radius: 15px;">
+								<img id="imageValueProposal1" src="./images/istockphoto-1403429306-1024x1024.jpg" alt="" style="height: 530px; object-fit: cover; border-radius: 15px;">
 							</div>
 							<div class="mt-2 ml-2" style="position: absolute; right: 3%; top: 74%;">
 								<img src="./images/panot_de_flor_60.png"  alt="Study in Barcelona Logo" style="border-radius: 0px;">
@@ -121,18 +137,19 @@
 				</div> <!-- end of value proposal 1 -->
 				
 
-				<div class="section py-5" style="background-color: #2C8FD5;">  <!-- value proposal 2 -->
+				<div class="section py-6" style="background-color: #2C8FD5;">  <!-- value proposal 2 -->
 					<div class="container clearfix">
 						<div class="row"> 
 							<div class="col-md-6">
 								<div class="heading-block noborder">
-									<h2 style="text-transform: none; color: whitesmoke;">Saca el mayor provecho de tu viaje académico</h2>
+									<h2 id="titleValueProposal2" style="text-transform: none; color: whitesmoke;">Saca el mayor provecho de tu viaje académico</h2>
 								</div>
 
 								<div style="color: whitesmoke;">
 									
-									<p>
-										Somos agentes locales y te ofrecemos experiencia global en educación de primera mano en Barcelona. 
+									<p id="bodyValueProposal2">
+										Somos agentes locales certificados por ICEF, una organización de prestigio internacional en el sector de la educación, 
+										y te ofrecemos experiencia global en educación de primera mano en Barcelona. 
 										<strong>Benefíciate de nuestros amplios conocimientos del sistema educativo de Catalunya, toma mejores decisiones y 
 										saca el mayor provecho de tu viaje académico</strong>.
 									</p>
@@ -140,7 +157,8 @@
 								</div>
 								<div class="center mb-0 pt-3">
 									<a 
-										href="#contact" class="button button-xlarge button-circle" 
+										id="contactButton2"
+										href="feedback-form.html" class="button button-xlarge button-circle" 
 										data-animate="bounceInLeft"
 										style="background-color: #8f165e; text-transform: none;">
 										<i class="icon-user-edit"></i> 
@@ -148,12 +166,12 @@
 									</a>
 								</div>
 							</div>
-							<div class="col-md-6">
+							<div class="col-md-6 d-flex align-items-center">
 								<div class="" style="position: relative;">
-									<img src="./images/istockphoto-1371940128-1024x1024.jpg" alt="" style="height: 530px; object-fit: cover; border-radius: 15px;">
+									<img id="imageValueProposal2" src="./images/istockphoto-1371940128-1024x1024.jpg" alt="" style="height: 530px; object-fit: cover; border-radius: 15px;">
 								</div>
 								<div class="mt-2 ml-2" style="position: absolute; right: 3%; top: 76%;">
-									<img src="./images/panot_de_flor_60.png"  alt="Study in Barcelona Logo" style="border-radius: 0px;">
+									<img src="./images/logo_sib_dark_background.png"  alt="Study in Barcelona Logo" style="border-radius: 0px; height: 80px;">
 								</div>
 							</div>
 						</div>
@@ -161,130 +179,39 @@
 					</div>
 				</div><!-- end of value proposal 2 -->
 
-				<div id="service" class="container clearfix py-5"> <!-- Services -->
+				<div id="service" name="service" class="container clearfix py-5"> <!-- Services -->
 					<div class="row"> 
-
-							<div class="col-md-6 px-3">
-								<div class="heading-block noborder">
-									<h1 style="text-transform: none; color: #003f8b;">Nuestros servicios</h1>
-								</div>
-
-								<ul class="" style="list-style-type: none;">
-									<li><i style="font-size: 3rem;" class="icon-hands"></i><strong class="fs-4"> Asistencia completa</strong> 
-                    <p class="fs-5"><strong>Desde tu país de origen hasta Barcelona!</strong> Te proporcionamos apoyo en cuestiones académicas y legales.</p>
-                  </li>
-									<li><i style="font-size: 3rem;" class="icon-line2-pointer"></i><strong class="fs-4">Orientación integral</strong> 
-                   <p class="fs-5"> Conocemos el sistema educativo de Barcelona y te orientaremos sobre <strong>itinerarios académicos</strong>, opciones de <strong>alojamiento y trámites de visado.</strong></p>
-                  </li>
-									<li><i style="font-size: 3rem;" class="icon-chat-3"></i><strong class="fs-4">Asesoramiento educativo</strong> 
-                    <p class="fs-5">Recibirás asesoramiento lingüístico y académico-educativo adaptado a tus necesidades personales, nivel de competencia y formación previa.</p>
-                  </li>
-									<li><i style="font-size: 3rem;" class="icon-line-paper"></i> <strong class="fs-4">Informe personalizado</strong> 
-                   <p class="fs-5"> Obtendrás un informe claro, preciso y personalizado en el que resumimos todas las posibilidades educativas en Barcelona.*</p>
-                   </li>
-									<li><i style="font-size: 3rem;" class="icon-piggy-bank"></i> <strong class="fs-4">Garantía de precio</strong> 
-                    <p class="fs-5">Mantenemos el precio de nuestros servicios independientemente de si deseas estudiar en instituciones públicas o privadas, .</p>
-                  </li>
-								</ul>
-                <span>*Este informe se basa en la información que nos proporcione y en nuestro conocimiento local de 
-                      las instituciones educativas y del sistema educativo local.</span>
-								
-							</div>
-								
-							<div id="contact" class="col-md-6 pt-4"> <!-- contact form-->
-								<div id="formContainer" class="">
-									<div class="heading-block noborder center pt-3 mb-4 ">
-										<h2 class="">Contacta con nosotros ya <br>
-											y pon en marcha tus sueños</h2>
-									</div>
-									
-									<form class="col-12 mb-0 px-1" id="contact-form" onsubmit="return false" method="post">
-										<!-- name -->
-										<div class="col-12 form-row">									
-											<div class="col-sm-4 center col-form-label">
-												<label class="fs-6 pr-2" for="contact-form-name">Nombre:</label>
-											</div>
-											<div class="col-sm-8">
-												<input type="text" name="contact-form-name" id="contact-form-name" class="form-control required" value="" placeholder="Tu nombre completo es...">
-											</div>
-										</div>
-
-										<!-- email -->
-										<div class="col-12 form-row">
-											<div class="col-sm-4 center col-form-label">
-												<label class="fs-6 pr-2" for="contact-form-email">Email:</label>
-											</div>
-											<div class="col-sm-8">
-												<input type="email" name="contact-form-email" id="contact-form-email" class="form-control required" value="" placeholder="Tu email es...">
-											</div>
-										</div>
-	
-										<!-- age -->
-										<div class="col-12 form-row">
-											<div class="col-sm-4 center col-form-label">
-												<label class="fs-6 pr-2" for="contact-form-age">Edad:</label>
-											</div>
-											<div class="col-sm-8">
-												<input type="number" min="10" name="contact-form-age" id="contact-form-age" class="form-control required" value="" placeholder="Tu edad es...">
-											</div>
-										</div>
-	
-										<!-- citizenship -->
-										<div class="col-12 form-row">
-											<div class="col-sm-4 center col-form-label">
-												<label class="fs-6 pr-2" for="contact-form-citizenship">Nacionalidad:</label>
-											</div>
-											<div class="col-sm-8 pr-5">
-												<input type="text" name="contact-form-citizenship" id="contact-form-citizenship" class="form-control required" value="" placeholder="Tu nacionalidad es...">
-											</div>
-										</div>
-											
-										<!-- interest -->
-										<div class="col-12 form-row">
-											<div class="col-sm-4 center col-form-label">
-												<label class="fs-6 pr-2" for="contact-form-interest">Interés:</label>
-											</div>
-											<div class="col-sm-8">
-												<div class="btn-group btn-group-toggle d-flex" data-toggle="buttons">
-													<label class="btn btn-outline-dark font-body ls0 nott px-2">
-														<input type="radio" class="form-control required" id="interest_languages" value="languges">Idiomas
-													</label>
-													<label class="btn btn-outline-dark font-body ls0 nott">
-														<input type="radio" class="form-control required" id="interest_3grade" value="3grade">Master / PhD
-													</label>
-													<label class="btn btn-outline-dark font-body ls0 nott px-2">
-														<input type="radio" class="form-control required" id="interest_university" value="university">Universidad
-													</label>
-												</div>
-											</div>
-										</div>
-										
-
-										<!-- Comments -->
-										<div class="col-12 form-row">
-											<div class="col-sm-4 center col-form-label">
-												<label class="fs-6 pr-2" for="contact-form-comments">Comentarios:</label>
-											</div>
-											<div class="col-sm-8">
-												<input type="text-area" name="contact-form-comments" id="contact-form-comments" class="form-control required" value="" placeholder="">
-											</div>
-										</div>
-										
-										
-										
-										<div id="actionbtn" class="row pt-2">
-											<div class="col-11">
-												<button type="submit" id="sendBtn" name="sendBtn" class="btn">Enviar</button>
-												<button type="button" id="cancelBtn" class="btn btn-secondary mx-2" data-toggle="modal" data-target="confirmationModal">Cancelar</button>
-											</div>
-											<div class="col-1"></div>
-										</div>
-	
-									</form>
-								
-								</div>
-							</div> <!-- end of contact form-->
+						<div class="heading-block noborder">
+							<h1 id="servicesTitle" style="font-size: 2.8em; text-transform: none; color: #003f8b;">Nuestros servicios</h1>
 						</div>
+						
+						<ul id="servicesList" class="d-flex" style="list-style-type: none; flex-wrap: wrap;">
+							<li class="col-md-6 px-3 pb-3">
+								<i id="serviceIcon" style="font-size: 3rem;" class="icon-hands"></i><strong id="servicesName" class="fs-4"> Asistencia completa</strong> 
+								<p id="servicesDescription" class="fs-5 pb-4"><strong>Desde tu país de origen hasta Barcelona!</strong> Te proporcionamos apoyo en cuestiones académicas y legales.</p>
+							</li>
+						</ul>
+						
+					</div>
+						
+							
+					<div id="" class="col-12"> 
+						
+						<span id="servicesNotes">*Este informe se basa en la información que nos proporciones y en nuestro conocimiento local de 
+									las instituciones educativas y del sistema educativo local.</span>
+						<div class="center mb-0 pt-5">
+							<a 
+								id="contactButton3"
+								href="#confirmationModal" class="button button-xlarge button-circle" 
+								data-animate="bounceInLeft"
+								data-toggle="modal"
+								
+								style="background-color: #8f165e; text-transform: none;">
+								<i class="icon-user-edit"></i> 
+								Contacta ya!
+							</a>
+						</div>
+					</div> 
 				</div><!-- end of Services -->
 				
 				<div class="container clearfix">
@@ -297,13 +224,15 @@
 										<h4 class="modal-title" id="myModalLabel">Gracias por contactar con nosotros!</h4>
 										<span class="fs-4" style="color: white;">&times;</span>
 									</div>
-									<div class="modal-body">
+									<div class="modal-body mt-4">
 										<p class="nobottommargin center">
 											A continuación tendrás acceso a un formulario que debes rellenar 
 											para que podamos estudiar tu caso y diseñar un intinerario personalizado.<br>
-										<em>Tienes 10 días</em>	 para rellenarlo. Gracias por contactar con nosotros!
+										<em>Tienes 10 días</em>	 para rellenarlo. 
 										</p>
-										<span style="color:#8f165e; font-weight: 600;">Study in Barcelona</span>
+										<p class="center mb-2">
+											<span style="color:#8f165e; font-weight: 600;">Study in Barcelona</span>
+										</p>
 										<div class="center p-3">
 											<a 
 												id="confirmationBtn"
@@ -346,24 +275,31 @@
 							<div class="modal-body" style="background-color: #2C8FD5;">
 								<div class="modal-content">
 									<div class="modal-header">
-										<h1 class="mb-0" id="myModalLabel" style="font-weight: 600;">Hola!</h1>
+										<div class="row col-12">
+											<div class="col-6">
+												<h1 class="mb-0" id="modalTitle" style="font-weight: 600;">Hola!</h1>
+											</div>
+											<div class="col-6">
+												<span>Choose your preferred language</span>
+												<span id="en" class="lang-tag">English</span> <span id="es" class="lang-tag">Español</span> <span id="ca-ES" class="lang-tag">Català</span>
+											</div>
+										</div>
 									</div>
 									<div class="modal-body">
-										<p class="center fs-3">
+										<p id="body_phrase_1" class="center fs-3">
 											<strong>"Somos la única agencia trabajando exclusivamente en destino Barcelona"</strong>
 										</p>
 
 										<div> <!-- cookies -->
-											<p class="nobottommargin center">
-												Esta página web utiliza <strong>cookies</strong> para analizar de forma anónima y estadística 
-												su uso. Al clicar "De acuerdo" aceptas estas cookies.
+											<p id="body_phrase_2" class="nobottommargin center">
+												Esta sito web sólo utiliza las <strong>cookies</strong> necesarias para su correcto funcionamiento. <br> 
+											  Al clicar "De acuerdo" aceptas estas cookies.
 											</p>
 
 											<div class="center p-3">
 												<button 
-													id="confirmationBtn"
+													id="modalConfirmationBtn"
 													class="button button-large button-circle" 
-													onclick="closeWellcome()"
 													style="background-color: #8f165e; font-size: .8rem; text-transform: none;">
 													<i class="icon-checkbox-checked"></i> 
 													De acuerdo!
@@ -404,7 +340,7 @@
 
               <div class="row col-12">
                 <div class="d-flex align-items-end">
-                  <img src="./images/panot_de_flor_60.png" width="60" height="auto" alt="" >
+                  <img id="logoDarkBackground" src="./images/logo_sib_dark_background.png" width="60" height="auto" alt="" >
 									<span class="pl-4 fs-4" style="color: whitesmoke;"> Study in Barcelona</span>
 								</div>
               </div>
@@ -413,17 +349,17 @@
               
               <div class="pt-2 clearfix">
 
-								<p class="fs-6"> Nuestra misión es <em>orientarte</em> en tu camino al <em> éxito!</em></p>
+								<p id="footerMission" class="fs-6"> Nuestra misión es <em>orientarte</em> en tu camino al <em> éxito!</em></p>
 
 								<div class="fs-6">
-									<address>
+									<address id="footerHeadquartersAddress">
 										<strong>Oficinas:</strong><br>
 										Calle Provenza 455<br>
 										08025 Barcelona<br>
                     España
 									</address>
-									<abbr title="Phone Number"><strong>Teléfono:</strong></abbr> (+34) 654 763 251<br>
-									<abbr title="Email Address"><strong>Email:</strong></abbr> info@studyinbarcelona.net 
+									<abbr id="contactName1" title="Phone "><strong>Teléfono:</strong></abbr> <abbr id="contactValue1" title="Number">(+34) 636 198 598</abbr> <br>
+									<abbr id="contactName2" title="Email "><strong>Email:</strong></abbr> <abbr id="contactValue2" title="Address">info@studyinbarcelona.net</abbr>  
 								</div>
 
 							</div>
@@ -437,7 +373,7 @@
 							<div class="widget clearfix">
 								
 								<div style="position: relative;">
-                  <img src="./images/headquarters.png" alt="Headquarters in the map: Provença street, 455" style="height: 400px; object-fit: cover; border-radius: 15px;">
+                  <img id="footerHeadquartersImage" src="./images/headquarters.png" alt="Headquarters in the map: Provença street, 455" style="height: 400px; object-fit: cover; border-radius: 15px;">
 									<i class="icon-map-marker1 fs-1" style="position: absolute; color: #f64904; top: 59%; right: 21%;"></i>
 								</div>
 								

@@ -1,10 +1,16 @@
 .btn-outline-dark {
-  color: #495057;
+  color: #444;
   background-color: white;
+  border: none;
+  
+  border-radius: 3px;
+}
+#secondButton {
+  border-left: solid 1px #444;
 }
 
 .btn-outline-dark:hover {
-  color: #fff;
+  color: #444;
   background-color: #feb850;
 }
 .btn-outline-dark:not(:disabled):not(.disabled):active,
@@ -12,8 +18,10 @@
 .show > .btn-outline-dark.dropdown-toggle {
   color: black;
   background-color: #feb850;
-  
 }
+.clear {
+  display: none;
+} 
 
 [id^='interest_'] {
   display: none;
@@ -59,21 +67,17 @@ label {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin-right: -5px;
-  margin-left: -5px;
+  margin-right: 20px;
+  margin-left: 20px;
 }
-.form-row > .col,
-.form-row > [class*='col-'] {
-  padding-right: 5px;
-  padding-left: 5px;
-}
+
 .form-group {
   margin-bottom: 2.5em;
 }
 
 #contact {
   position: relative;
-  height: 1450px;
+  height: 100%;
   background-color: #0B68B2; 
   border-radius: 15px; 
 }
@@ -86,7 +90,7 @@ label {
   position: -webkit-sticky; /* Safari */
   position: sticky;
   top: 30px;
-  height: 580px;
+  height: 500px;
 }
 .form-check-label {
   font-size: 1em;
@@ -106,4 +110,17 @@ label {
 
 #errorModal .modal-header {
   background-color: red;
+}
+
+select #language option[value="en"]   { background-image:url("../images/icons8-great-britain-48.png");   }
+select #language option[value="es"] { background-image:url("../images/icons8-spain-48.png"); }
+select #language option[value="ca-ES"] { background-image:url("../images/40px-Flag_of_Catalonia.png"); }
+
+.lang-tag {
+  font-size: small;
+  padding: 1px 15px;
+  border: solid #DDDEDF 1px;
+  border-radius: 5px;
+  background-color: #BBD9F7;
+  cursor: pointer;
 }

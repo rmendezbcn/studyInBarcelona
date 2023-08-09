@@ -37,26 +37,28 @@
 						<a href="index.html" class="standard-logo" data-dark-logo="./images/panot_de_flor_60.png"><img src="./images/panot_de_flor_60.png" alt="Study in Barcelona logo" height="40"></a>
 						<a href="index.html" class="retina-logo" data-dark-logo="./images/panot_de_flor_140.png"><img src="./images/panot_de_flor_140.png" alt="Study in Barcelona logo"></a>
 					</div><!-- #logo end -->
-					
+
 					<!-- language selector -->
           <div class="pl-4 pt-2 mt-1 inline-block">
-						<select name="languageSelector" id="languageSelector">
-							<option value="en"> English</option>
+						<select id="languageSelector" class="">
+							<option value="en">English</option>
 							<option value="es">Español</option>
 							<option value="ca-ES">Català</option>
 						</select>
 					</div> <!-- end of language selector -->
 
-					          <nav id="primary-menu">
+					<!-- Primary Navigation
+            ============================================= -->
+            
+          <nav id="primary-menu">
 						<ul class="one-page-menu">
 							<li id="homeMenuItem" class="current"><a style="padding: 20px 15px;" href="index.html"><div>Home</div></a></li>
-							<li id="serviceMenuItem"><a style="padding: 20px 15px;" href="index.html#service"><div>Nuestros Servicios</div></a></li>
+							<li id="serviceMenuItem"><a style="padding: 20px 15px;" href="#service"><div>Nuestros Servicios</div></a></li>
 							<li id="partnerMenuItem"><a style="padding: 20px 15px;" href="partnership.html"><div>Partners</div></a></li>
-							<li id="aboutMenuItem"><a style="padding: 20px 15px;" href="./about.html"><div>Acerca de nosotros</div></a></li>
+							<li id="aboutMenuItem"><a style="padding: 20px 15px;" href="about.html"><div>Acerca de nosotros</div></a></li>
 							<!-- <li><a style="padding: 20px 15px;" href="#"><div>Testimonials</div></a></li> -->
 						</ul> 
 					</nav><!-- #primary-menu end -->
-
 				</div>
 
 			</div>
@@ -72,53 +74,91 @@
 				<div class="container clearfix"> <!-- value proposal 1 -->
 
 					<div class="row"> 
-						<div class="col-md-6 my-2 center mt-1">
-							<h2 id="aboutTitle" class="fw-bold">Agente Certificado por <a href="https://www.icef.com/" target="_blank"></a> ICEF</h2>
-							<div class="pl-4 mb-3">
-								<img id="aboutImage_1" src="./images/Marc_Baeza.png" alt="" style="height: 250px; object-fit: cover; border-radius: 15px;">
+						<div class="col-md-6">
+							<div class="heading-block noborder pt-5">
+								<h1 id="partnerTitle" style="font-size: 2.1em; text-transform: none; color: #003f8b;">Trabaja con nosotros</h1>
 							</div>
-							<div class="heading-block noborder">
-								<h2 style="text-transform: none;">Marcos Baeza Gil</h2>
-								<address id="aboutData" class="m-0"></address>
-								<!--<span class="m-0">Whatsup: +34 636 198 598</span>
-								<span class="m-0">info@studyinbarcelona.net</span>-->
+							<div>
+								<p id="partnerBodyText">
+									En este apartado se irán incorporando las ofertas que tengamos para trabajar con nosotros. <br>
+									Si resides en el exterior y quieres colaborar 
+									con nosotros escríbenos un mail con tus datos, tu propuesta y nos pondremos en contacto contigo. 
+								</p>
 							</div>
 						</div>
-						<div class="col-md-6">
-							<div>
-								<img id="aboutImage_2" src="./images/ITAC-Certificate.png" alt="ITAC-Certificate" style="height: 500px; object-fit: cover;">
+						<div class="col-md-6" style="background-color: #2C8FD5; border-radius: 15px;">
+							<div id="formContainer" class="">
+								<div class="heading-block noborder center pt-5 mb-4">
+									<h2 id="formTitle" style="text-transform: none; color: whitesmoke;">Contacta con nosotros</h2>
+								</div>
+								
+								<form class="col-12 mb-0 px-1" id="contact-form" onsubmit="return false" method="post">
+									<!-- name -->
+									<div class="col-11 form-row">									
+										<div class="col-sm-4 center col-form-label">
+											<label id="formfieldName" class="fs-6 pr-2" for="contact-form-name">Nombre:</label>
+										</div>
+										<div class="col-sm-8 p-0">
+											<input type="text" name="contact-form-name" id="contact-form-name" class="form-control required" value="" placeholder="">
+										</div>
+									</div>
+
+									<!-- email -->
+									<div class="col-11 form-row">
+										<div class="col-sm-4 center col-form-label">
+											<label id="formFieldEmail" class="fs-6 pr-2" for="contact-form-email">Email:</label>
+										</div>
+										<div class="col-sm-8 p-0">
+											<input type="email" name="contact-form-email" id="contact-form-email" class="form-control required" value="" placeholder="">
+										</div>
+									</div>
+									
+									<div class="col-11 form-row">
+										<div class="col-sm-4 center col-form-label">
+											<label id="formFieldTypeContact" class="fs-6 pr-2" for="contact-form-interest">Tipo contacto:</label>
+										</div>
+										<div class="col-sm-8 p-0">
+											<div class="btn-group btn-group-toggle d-flex" data-toggle="buttons">
+												<label class="btn btn-outline-dark font-body ls0 nott px-2">
+													<input type="radio" class="form-control required clear" id="type_student" value="student">
+													<span id="formFieldTypeStudent" >Estudiante</span>
+												</label>
+												<label id="secondButton" class="btn btn-outline-dark font-body ls0 nott">
+													<input type="radio" class="form-control required clear" id="type_professional" value="professional">
+													<span id="formFieldTypeProfessional">Profesional</span>
+												</label>
+											</div>
+										</div>
+									</div>
+									<!-- proposal -->
+									<div class="col-11 form-row">
+										<div class="col-sm-4 center col-form-label">
+											<label id="formFieldProposal" class="fs-6 pr-2" for="contact-form-comments">Propuesta:</label>
+										</div>
+										<div class="col-sm-8 p-0">
+											<textarea name="contact-form-comments" id="contact-form-comments" class="form-control required" rows="3" cols="50" placeholder=""></textarea>
+										</div>
+									</div>
+									
+									
+									
+									<div id="actionbtn" class="form-row col-11 pt-3">
+										<div class="col-12 fright p-0 m-0">
+											<button type="submit" id="sendBtn" name="sendBtn" class="btn mr-1">Enviar</button>
+											<button type="button" id="cancelBtn" class="btn btn-secondary mx-2">Cancelar</button>
+										</div>
+									</div>
+								</form>
+									
 							</div>
 						</div>
 					</div> 
-					<div class="row mt-5">
-						<div>
-							<p id="aboutDescription">
-								Su espíritu viajero le llevo a viajar tres veces a Australia 
-								donde estudio la lengua y estudios universitarios. Estudió Magisterio en la Universidad Ramon Llull 
-								y tiene un máster en “Español como Lengua Extranjera” en la Universidad de Barcelona. 
-							</p>
-							
-						</div>
-						<div class="center pt-3 mb-3">
-							<a 
-								href="feedback-form.html" class="button button-xlarge button-circle" 
-								data-animate="bounceInLeft"
-								style="background-color: #8f165e; text-transform: none;">
-								<i class="icon-user-edit"></i> 
-								Contacta ya!
-							</a>
-						</div>
-						
-					</div>
-
 				</div> <!-- end of value proposal 1 -->
 				
 			</div>
 		</section><!-- #content end -->
 
     
-
-
 
     
      <!-- Footer
@@ -205,6 +245,7 @@
 			</div><!-- #copyrights end -->
 
 		</footer><!-- #footer end -->
+
     
   </div> <!-- #wrapper end -->
 
@@ -219,7 +260,7 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 	<script src="./js/plugins.js"></script>
 	<script src="./js/functions.js"></script>
-	<script src="./js/about.js"></script>
+	<script src="./js/partner.js"></script>
  	<!--<script type="module" src="{{mainJs}}"></script>-->
 
 

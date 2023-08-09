@@ -124,3 +124,6 @@ select #language option[value="ca-ES"] { background-image:url("../images/40px-Fl
   background-color: #BBD9F7;
   cursor: pointer;
 }
+.services-icon {
+  font-size: 3rem;
+}

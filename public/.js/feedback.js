@@ -1,6 +1,6 @@
 const url_to_strapi = {
-  current: 'http://localhost:1337',
-  //current: 'https://cms.studyinbarcelona.net',
+  //current: 'http://localhost:1337',
+  current: 'https://cms.studyinbarcelona.net',
 }
 
 // Event listener for the LanguageSelector
@@ -64,7 +64,10 @@ window.addEventListener('load', () => {
 async function fetchSiteMenu(languageId) {
   try {
     // Make a GET request to the API to fetch the site menu data based on the selected language
-    const response = await fetch(`${url_to_strapi.current}/api/site-menus/1?populate=localizations`);
+    const response = await fetch(`${url_to_strapi.current}/api/site-menus/1?populate=localizations`, {
+      method: 'GET',
+      credentials: 'include'
+    });
     const data = await response.json();
 
     // Pass the site menu data to the displaySiteMenu function
@@ -103,7 +106,10 @@ function displaySiteMenu(menuData, languageId) {
 async function fetchFooterData(languageId) {
   try {
     // Make a GET request to the API based on the selected language
-    const response = await fetch(`${url_to_strapi.current}/api/global-settings?locale=${languageId}&populate=footer`);
+    const response = await fetch(`${url_to_strapi.current}/api/global-settings?locale=${languageId}&populate=footer`, {
+      method: 'GET',
+      credentials: 'include'
+    });
     const data = await response.json();
     
     // Extract the footer data for the selected language
@@ -310,7 +316,10 @@ function updateLabelsAndInputs(translations, selectedLanguage) {
 // Function to fetch form labels for a specific locale
 async function fetchFormLabels(locale) {
   try {
-    const response = await fetch(`${url_to_strapi.current}/api/feedback-form?locale=${locale}`);
+    const response = await fetch(`${url_to_strapi.current}/api/feedback-form?locale=${locale}`, {
+      method: 'GET',
+      credentials: 'include'
+    });
     const data = await response.json();
 
     if (data.data && data.data.attributes) {

@@ -1,6 +1,6 @@
 const url_to_strapi = {
-  current: 'http://localhost:1337',
-  //current: 'https://cms.studyinbarcelona.net',
+  //current: 'http://localhost:1337',
+  current: 'https://cms.studyinbarcelona.net',
 }
 
 
@@ -68,7 +68,10 @@ window.addEventListener('load', () => {
 async function fetchData(languageId) {
   try {
     // Make a GET request to the API based on the selected language
-    const response = await fetch(`${url_to_strapi.current}/api/about?_locale=${languageId}&populate=*`);
+    const response = await fetch(`${url_to_strapi.current}/api/about?_locale=${languageId}&populate=*`, {
+      method: 'GET',
+      credentials: 'include'
+    });
     const data = await response.json();
     // Pass the data object to the displayData function
     displayData(data, languageId);
@@ -114,7 +117,10 @@ function displayData(data, selectedLanguage) {
 async function fetchButtonText(languageId) {
   try {
     // Make a GET request to the API based on the selected language and include the 'contact_button' data
-    const response = await fetch(`${url_to_strapi.current}/api/global-settings?locale=${languageId}&populate=contact_button`);
+    const response = await fetch(`${url_to_strapi.current}/api/global-settings?locale=${languageId}&populate=contact_button`, {
+      method: 'GET',
+      credentials: 'include'
+    });
     const data = await response.json();
     
     // Extract the button text data for the selected language
@@ -146,7 +152,10 @@ function displayButtonText(globalSettings, languageId) {
 async function fetchSiteMenu(languageId) {
   try {
     // Make a GET request to the API to fetch the site menu data based on the selected language
-    const response = await fetch(`${url_to_strapi.current}/api/site-menus/1?populate=localizations`);
+    const response = await fetch(`${url_to_strapi.current}/api/site-menus/1?populate=localizations`, {
+      method: 'GET',
+      credentials: 'include'
+    });
     const data = await response.json();
 
     // Pass the site menu data to the displaySiteMenu function
@@ -185,7 +194,10 @@ function displaySiteMenu(menuData, languageId) {
 async function fetchFooterData(languageId) {
   try {
     // Make a GET request to the API based on the selected language
-    const response = await fetch(`${url_to_strapi.current}/api/global-settings?locale=${languageId}&populate=footer`);
+    const response = await fetch(`${url_to_strapi.current}/api/global-settings?locale=${languageId}&populate=footer`, {
+      method: 'GET',
+      credentials: 'include'
+    });
     const data = await response.json();
     
     // Extract the footer data for the selected language

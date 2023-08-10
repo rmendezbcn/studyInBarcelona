@@ -1,6 +1,6 @@
 const url_to_strapi = {
-  current: 'http://localhost:1337',
-  //current: 'https://cms.studyinbarcelona.net',
+  //current: 'http://localhost:1337',
+  current: 'https://cms.studyinbarcelona.net',
 }
 
 
@@ -173,7 +173,8 @@ async function sendFormDataToAPI(formData) {
     const response = await fetch(`${url_to_strapi.current}/api/clients`, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'credentials': 'include'
       },
       body: JSON.stringify(jsonData)
     });

@@ -14,7 +14,11 @@ app.use(express.json());
 // Enable CORS
 const corsOptions = {
   origin: (origin, callback) => {
-    const allowedOrigins = ['https://studyinbarcelona.net', 'https://cms.studyinbarcelona.net'];
+    const allowedOrigins = [
+      'https://www.studyinbarcelona.net',
+      'https://studyinbarcelona.net', 
+      'https://cms.studyinbarcelona.net'
+    ];
     const requestOrigin = origin;
 
     // Check if the request origin is allowed

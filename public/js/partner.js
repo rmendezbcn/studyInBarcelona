@@ -87,7 +87,7 @@ async function fetchData(languageId) {
 }
 
 // Display the data on the webpage for the selected language
-function displayData(data, selectedLanguage) {
+function displayData(data) {
     // Get the attributes for the selected language
     const attributes = data.data.attributes;
 

@@ -1,6 +1,6 @@
 const url_to_strapi = {
-  current: 'http://localhost:1337',
-  //current: 'https://api.studyinbarcelona.net',
+  //current: 'http://localhost:1337',
+  current: 'https://cms.studyinbarcelona.net',
 }
 
 const sendBtn = document.getElementById("sendBtn");

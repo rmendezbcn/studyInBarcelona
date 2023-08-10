@@ -15,10 +15,10 @@ app.use(express.json());
 const corsOptions = {
   origin: (origin, callback) => {
     const allowedOrigins = [
-      'https://www.studyinbarcelona.net',
-      'https://studyinbarcelona.net', 
-      'https://cms.studyinbarcelona.net',
-      'http://localhost:1337',
+      'https://www.studyinbarcelona.net/',
+      'https://studyinbarcelona.net/', 
+      'https://cms.studyinbarcelona.net/',
+      'http://localhost:1337/',
     ];
     const requestOrigin = origin;
 

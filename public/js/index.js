@@ -1,6 +1,6 @@
 const url_to_strapi = {
   current: 'http://localhost:1337',
-  //current: 'https://api.studyinbarcelona.net',
+  //current: 'https://cms.studyinbarcelona.net',
 }
 
 $(window).on('load', function() {
@@ -30,7 +30,7 @@ languageSelector.addEventListener('change', async () => {
   
 });
 
-// saves the user's language preference in the cooki
+// saves the user's language preference in the cookie
 function setLanguagePreferenceCookie(langId) {
   document.cookie = `language=${langId}; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/`;
 }

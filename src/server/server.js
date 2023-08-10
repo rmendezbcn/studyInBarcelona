@@ -14,7 +14,7 @@ app.use(express.json());
 // Enable CORS
 const corsOptions = {
   origin: (origin, callback) => {
-    const allowedOrigins = ['https://studyinbarcelona.net', 'http://127.0.0.1'];
+    const allowedOrigins = ['https://studyinbarcelona.net', 'https://cms.studyinbarcelona.net'];
     const requestOrigin = origin;
 
     // Check if the request origin is allowed
@@ -31,6 +31,7 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
+
 
 // Define the MIME types for different file extensions
 const mimeTypes = {

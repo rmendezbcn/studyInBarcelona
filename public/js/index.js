@@ -87,7 +87,10 @@ async function fetchData(languageId) {
   try {
     // Make a GET request to the API based on the selected language
     //const response = await fetch(`${url_to_strapi.current}/api/index?locale=${languageId}&populate=*`);
-    const response = await fetch(url_to_strapi.current + '/api/index?populate=*');
+    const response = await fetch(url_to_strapi.current + '/api/index?populate=*', {
+      method: 'GET',
+      credentials: 'include'
+    });
     const data = await response.json();
     //console.log(data)
     
@@ -181,12 +184,18 @@ function displayData(data, selectedLanguage) {
 async function fetchServicesData(languageId) {
   try {
     // Fetch all services data
-    const response = await fetch(`${url_to_strapi.current}/api/services`);
+    const response = await fetch(`${url_to_strapi.current}/api/services`, {
+      method: 'GET',
+      credentials: 'include'
+    });
     const data = await response.json();
 
     // Fetch localizations for all services
     const localizationResponses = await Promise.all(
-      data.data.map((service) => fetch(`${url_to_strapi.current}/api/services/${service.id}?populate=localizations`))
+      data.data.map((service) => fetch(`${url_to_strapi.current}/api/services/${service.id}?populate=localizations`), {
+        method: 'GET',
+        credentials: 'include'
+      })
     );
 
     const localizedServicesData = await Promise.all(localizationResponses.map((res) => res.json()));
@@ -246,7 +255,10 @@ function displayServices(servicesData) {
 async function fetchFooterData(languageId) {
   try {
     // Make a GET request to the API based on the selected language
-    const response = await fetch(`${url_to_strapi.current}/api/global-settings?locale=${languageId}&populate=footer`);
+    const response = await fetch(`${url_to_strapi.current}/api/global-settings?locale=${languageId}&populate=footer`, {
+      method: 'GET',
+      credentials: 'include'
+    });
     const data = await response.json();
     
     // Extract the footer data for the selected language
@@ -284,7 +296,10 @@ function displayFooterContent(footerData) {
 async function fetchButtonText(languageId) {
   try {
     // Make a GET request to the API based on the selected language and include the 'contact_button' data
-    const response = await fetch(`${url_to_strapi.current}/api/global-settings?locale=${languageId}&populate=contact_button`);
+    const response = await fetch(`${url_to_strapi.current}/api/global-settings?locale=${languageId}&populate=contact_button`, {
+      method: 'GET',
+      credentials: 'include'
+    });
     const data = await response.json();
     
     // Extract the button text data for the selected language
@@ -316,7 +331,10 @@ function displayButtonText(globalSettings, languageId) {
 async function fetchSiteMenu(languageId) {
   try {
     // Make a GET request to the API to fetch the site menu data based on the selected language
-    const response = await fetch(`${url_to_strapi.current}/api/site-menus/1?populate=localizations`);
+    const response = await fetch(`${url_to_strapi.current}/api/site-menus/1?populate=localizations`, {
+      method: 'GET',
+      credentials: 'include'
+    });
     const data = await response.json();
 
     // Pass the site menu data to the displaySiteMenu function
@@ -361,7 +379,10 @@ languageButtons.forEach(button => {
     if (selectedLanguage === 'en' && defaultModalContent !== null) {
       displayModalContent(defaultModalContent);
     } else {
-      const response = await fetch(`${url_to_strapi.current}/api/modals?locale=${selectedLanguage}`);
+      const response = await fetch(`${url_to_strapi.current}/api/modals?locale=${selectedLanguage}`, {
+        method: 'GET',
+        credentials: 'include'
+      });
       const data = await response.json();
 
       if (data.data) {
@@ -389,7 +410,10 @@ function displayModalContent(attributes) {
 let defaultModalContent = null;
 
 window.addEventListener('load', async () => {
-  const response = await fetch(`${url_to_strapi.current}/api/modals?locale=en`);
+  const response = await fetch(`${url_to_strapi.current}/api/modals?locale=en`, {
+    method: 'GET',
+    credentials: 'include'
+  });
   const data = await response.json();
 
   if (data.data && data.data.length > 0) {
@@ -406,7 +430,10 @@ languageButtons.forEach(button => {
     if (selectedLanguage === 'english' && defaultModalContent !== null) {
       displayModalContent(defaultModalContent);
     } else {
-      const response = await fetch(`${url_to_strapi.current}/api/modals?locale=${selectedLanguage}`);
+      const response = await fetch(`${url_to_strapi.current}/api/modals?locale=${selectedLanguage}`, {
+        method: 'GET',
+        credentials: 'include'
+      });
       const data = await response.json();
 
       if (data.data) {

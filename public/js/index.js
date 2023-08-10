@@ -32,8 +32,9 @@ languageSelector.addEventListener('change', async () => {
 
 // saves the user's language preference in the cookie
 function setLanguagePreferenceCookie(langId) {
-  document.cookie = `language=${langId}; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/`;
+  document.cookie = `language=${langId}; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/; SameSite=None; Secure`;
 }
+
 
 // read the language stored in the cookie to determine the user's language preference
 function getLanguagePreference() {
@@ -85,8 +86,8 @@ window.addEventListener('load', () => {
 async function fetchData(languageId) {
   try {
     // Make a GET request to the API based on the selected language
-    const response = await fetch(`${url_to_strapi.current}/api/index?locale=${languageId}&populate=*`);
-    //const response = await fetch(url_to_strapi.current + '/api/index?populate=*');
+    //const response = await fetch(`${url_to_strapi.current}/api/index?locale=${languageId}&populate=*`);
+    const response = await fetch(url_to_strapi.current + '/api/index?populate=*');
     const data = await response.json();
     //console.log(data)
     
@@ -357,7 +358,7 @@ languageButtons.forEach(button => {
   button.addEventListener('click', async () => {
     const selectedLanguage = button.id;
 
-    if (selectedLanguage === 'english' && defaultModalContent !== null) {
+    if (selectedLanguage === 'en' && defaultModalContent !== null) {
       displayModalContent(defaultModalContent);
     } else {
       const response = await fetch(`${url_to_strapi.current}/api/modals?locale=${selectedLanguage}`);

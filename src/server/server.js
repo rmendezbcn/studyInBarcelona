@@ -18,7 +18,7 @@ const corsOptions = {
       'https://www.studyinbarcelona.net',
       'https://studyinbarcelona.net', 
       'https://cms.studyinbarcelona.net',
-      'http://localhost',
+      'http://localhost:1337',
     ];
     const requestOrigin = origin;
 

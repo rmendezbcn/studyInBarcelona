@@ -20,8 +20,9 @@ languageSelector.addEventListener('change', async () => {
 
 // saves the user's language preference in the cooki
 function setLanguagePreferenceCookie(langId) {
-  document.cookie = `languagePreference=${langId}; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/`;
+  document.cookie = `language=${langId}; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/; SameSite=None; Secure`;
 }
+
 
 // read the language stored in the cookie to determine the user's language preference
 function getLanguagePreference() {

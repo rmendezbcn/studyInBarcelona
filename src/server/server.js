@@ -16,7 +16,7 @@ const corsOptions = {
   origin: (origin, callback) => {
     const allowedOrigins = [
       'https://www.studyinbarcelona.net/',
-      'https://studyinbarcelona.net/', 
+      'https://studyinbarcelona.net/',
       'https://cms.studyinbarcelona.net/',
       'http://localhost:1337/',
     ];

@@ -1,5 +1,5 @@
 function sendEmail(data) {
-  return new Promise((resolve, reject) => {
+  /*return new Promise((resolve, reject) => {
     fetch('https://studyinbarcelona.net/sendEmail', {
       method: 'POST',
       headers: {
@@ -17,5 +17,5 @@ function sendEmail(data) {
       .catch(function (error) {
         reject(error); // Reject the promise for any other error
       });
-  });
+  });*/
 }

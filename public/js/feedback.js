@@ -1,7 +1,8 @@
-const url_to_strapi = {
-  //current: 'http://localhost:1337',
-  current: 'https://cms.studyinbarcelona.net',
-}
+/*const url_to_strapi = {
+  current: 'http://localhost:1337',
+  //current: 'https://cms.studyinbarcelona.net',
+}*/
+
 
 // Event listener for the LanguageSelector
 const languageSelector = document.getElementById('languageSelector');

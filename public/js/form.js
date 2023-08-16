@@ -1,7 +1,7 @@
-const url_to_strapi = {
+/*const url_to_strapi = {
   //current: 'http://localhost:1337',
   current: 'https://cms.studyinbarcelona.net',
-}
+}*/
 
 
 function saveFormData() {
